@@ -1,26 +1,3 @@
 <template>
-  <h2 class="ComponentPage-subHeading ComponentPage-variantsTitle" id="Variants">Variants</h2>
-  <button id="checkbox-11" role="checkbox" type="button" class="ms-Checkbox is-checked is-enabled exampleCheckbox_01d96876 css-122" aria-checked="true" aria-describedby=""><label class="ms-Checkbox-label css-53" for="checkbox-11"><div class="ms-Checkbox-checkbox css-123"><i data-icon-name="CheckMark" class="root-125" role="presentation" aria-hidden="true"></i></div><span class="ms-Checkbox-text css-56">Disable buttons</span></label></button>
-  <button id="checkbox-12" role="checkbox" type="button" class="ms-Checkbox is-checked is-enabled exampleCheckbox_01d96876 css-122" aria-checked="true" aria-describedby=""><label class="ms-Checkbox-label css-53" for="checkbox-12"><div class="ms-Checkbox-checkbox css-123"><i data-icon-name="CheckMark" class="root-125" role="presentation" aria-hidden="true"></i></div><span class="ms-Checkbox-text css-56">Mark as checked</span></label></button>
   <h1>${message}</h1>
-  <office-button label="basicButton" onclick.call="hoj()" icon="plus"  description="description" type="${ButtonType.basic}"></office-button>
-  <office-button label="commandButton" icon="plus" description="description" type="${ButtonType.command}"></office-button>
-  <office-button label="compoundButton" icon="plus" description="description" type="${ButtonType.compound}"></office-button>
-  <office-button label="heroButton" icon="plus" description="description" type.bind="ButtonType.hero"></office-button>
-  <office-button label="primaryButton" icon="plus" description="description" type="2"></office-button>
-  
-
-  <label for="media-type">Select a type '${ButtonType[3]}'</label>
-  <select id="media-type" value.bind="type">
-
-    <!-- When we iterate, we need to iterate over the ButtonType variable,
-      which is the iterable version of the ButtonType enum. -->
-    <option model.bind="ButtonType[type]" repeat.for="type of ButtonTypes">${type}</option>
-  </select>
-
-  <!-- We can use the ButtonType enum to get the string associated with the enum's numerical value. -->
-  <div>You've selected ${type} (${ButtonType[type]}) ${ButtonType.hero}</div>
-
-  <office-button label="basicButton" icon="plus" description="description" type="${type}"></office-button>
-  
 </template>

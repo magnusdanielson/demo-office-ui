@@ -1,54 +1,47 @@
-import * as gulp from 'gulp';
-import * as browserSync from 'browser-sync';
-import * as historyApiFallback from 'connect-history-api-fallback/lib';
-import {CLIOptions} from 'aurelia-cli';
+import {config} from './build';
+import configureEnvironment from './environment';
+import * as webpack from 'webpack';
+import * as Server from 'webpack-dev-server';
 import * as project from '../aurelia.json';
-import build from './build';
-import watch from './watch';
+import {CLIOptions, reportWebpackReadiness} from 'aurelia-cli';
+import * as gulp from 'gulp';
 
-let serve = gulp.series(
-  build,
-  done => {
-    browserSync({
-      online: false,
-      open: false,
-      port: 9000,
-      logLevel: 'silent',
-      server: {
-        baseDir: [project.platform.baseDir],
-        middleware: [historyApiFallback(), function(req, res, next) {
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          next();
-        }]
-      }
-    }, function (err, bs) {
-      if (err) return done(err);
-      let urls = bs.options.get('urls').toJS();
-      log(`Application Available At: ${urls.local}`);
-      log(`BrowserSync Available At: ${urls.ui}`);
-      done();
-    });
+function runWebpack(done) {
+  // https://webpack.github.io/docs/webpack-dev-server.html
+  let opts = {
+    host: 'localhost',
+    publicPath: config.output.publicPath,
+    filename: config.output.filename,
+    hot: project.platform.hmr || CLIOptions.hasFlag('hmr'),
+    port: project.platform.port,
+    contentBase: config.output.path,
+    historyApiFallback: true,
+    open: project.platform.open,
+    stats: {
+      colors: require('supports-color')
+    },
+    https: config.devServer.https
+  } as any;
+
+  if (project.platform.hmr || CLIOptions.hasFlag('hmr')) {
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    config.entry.app.unshift(`webpack-dev-server/client?http://${opts.host}:${opts.port}/`, 'webpack/hot/dev-server');
   }
+
+  const compiler = webpack(config);
+  let server = new Server(compiler, opts);
+
+  server.listen(opts.port, opts.host, function(err) {
+    if (err) throw err;
+
+    reportWebpackReadiness(opts);
+    done();
+  });
+}
+
+const run = gulp.series(
+  configureEnvironment,
+  runWebpack
 );
 
-function log(message) {
-  console.log(message);
-}
-
-function reload() {
-  log('Refreshing the browser');
-  browserSync.reload();
-}
-
-let run;
-
-if (CLIOptions.hasFlag('watch')) {
-  run = gulp.series(
-    serve,
-    done => { watch(reload); done(); }
-  );
-} else {
-  run = serve;
-}
-
-export default run;
+export { run as default };
