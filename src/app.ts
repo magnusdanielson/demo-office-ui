@@ -7,8 +7,18 @@ initializeIcons(/* optional base url */);
 
 export class App {
   public log:Logger;
-    public router: Router;
+  public router: Router;
   message = 'Hello World!';
+  showBurgerMenu = true;
+
+  toggleMenu(args:any[])
+  {
+    console.log(args);
+
+    //@ts-ignore
+    this.parent.showBurgerMenu = ! this.parent.showBurgerMenu;
+
+  }
 
   public groups = [
     {
@@ -85,7 +95,7 @@ export class App {
             key: 'toggle'
           }
         ],
-        isExpanded: true },
+        isExpanded: false },
         {
           name: 'Navigation',
           links: [
@@ -116,7 +126,7 @@ export class App {
               key: 'search'
             }
           ],
-          isExpanded: true
+          isExpanded: false
         },
         {
           name: 'Pickers',
@@ -132,7 +142,7 @@ export class App {
               key: 'datepicker'
             }
           ],
-          isExpanded: true
+          isExpanded: false
         },
         {
           name: 'Progress & Validation',
@@ -143,7 +153,7 @@ export class App {
               key: 'messagebar'
             }
           ],
-          isExpanded: true
+          isExpanded: false
         }
       ]
     }
