@@ -1,0 +1,44 @@
+<template>
+  <require from="./examplecard.css"></require>
+  <require from="./examplecard"></require> <require from="hljs"></require>
+  <require from="highlight.js/styles/dracula.css"></require>
+  
+
+  <div
+    class="content"
+    style="bottom: unset; top: 0px; background-color: rgb(3, 131, 135);">
+    <h1 class="pageTitle">Toggle</h1>
+    <div
+      role="presentation"
+      class="ms-FocusZone"
+      
+    ></div>
+  </div>
+  <div class="PageSection">
+        
+
+              <examplecard title="Implementation examples">
+                    <div slot="code">
+                      <hljs language="html" linenumbers="true">
+  &#x3C;du-toggle off-text=&#x22;MyOffText&#x22;   on-text=&#x22;MyOnText&#x22;&#x3E;&#x3C;/du-toggle&#x3E;
+  &#x3C;du-toggle disabled=&#x22;true&#x22; off-text=&#x22;MyOffText&#x22;   on-text=&#x22;MyOnText&#x22;&#x3E;&#x3C;/du-toggle&#x3E;
+  &#x3C;du-toggle checked.bind=&#x22;checked&#x22; on-changed.bind=&#x22;onChange&#x22; off-text=&#x22;MyOffText&#x22; on-text=&#x22;MyOnText&#x22;&#x3E;&#x3C;/du-toggle&#x3E;
+                      </hljs>
+                      <hljs language="typescript" linenumbers="true">
+  public checked:boolean = false;
+
+  onChange( isChecked: boolean)
+  {
+      this.checked = isChecked;
+      console.log("The option has been changed to " + isChecked);
+  }
+                      </hljs>
+                    </div>
+                    <div slot="example">
+                        <du-toggle off-text="MyOffText"   on-text="MyOnText"></du-toggle>
+                        <du-toggle disabled="true" off-text="MyOffText"   on-text="MyOnText"></du-toggle>
+                        <du-toggle checked.bind="checked" on-changed.bind="onChange" off-text="MyOffText" on-text="MyOnText"></du-toggle>
+                    </div>
+                  </examplecard>
+  </div>
+</template>

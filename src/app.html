@@ -1,3 +1,15 @@
 <template>
-  <h1>${message}</h1>
+    <require from="page.css"></require>
+  <div class="ms-Fabric">
+      <div class="ms-Grid" dir="ltr">
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-sm4 ms-md4 ms-lg3">
+                <du-nav selected-key.to-view="router.currentInstruction.config.name" groups.bind="groups"></du-nav>
+            </div>
+            <div class="ms-Grid-col ms-sm8 ms-md8 ms-lg9">
+                <router-view></router-view>
+            </div>
+          </div>
+        </div>
+</div>
 </template>

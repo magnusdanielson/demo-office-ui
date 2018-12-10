@@ -1,0 +1,81 @@
+<template>
+  <require from="./examplecard.css"></require>
+  <require from="./examplecard"></require> <require from="hljs"></require>
+  <require from="highlight.js/styles/dracula.css"></require>
+  
+
+  <div
+    class="content"
+    style="bottom: unset; top: 0px; background-color: rgb(3, 131, 135);">
+    <h1 class="pageTitle">Textfield</h1>
+    <div
+      role="presentation"
+      class="ms-FocusZone"
+      
+    ></div>
+  </div>
+  <div class="PageSection">
+
+
+              <examplecard title="Implementation examples">
+                    <div slot="code">
+                      <hljs language="html" linenumbers="true">
+  &#x3C;du-text-field label=&#x22;Standard&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Disabled&#x22; disabled=&#x22;true&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Read Only&#x22; read-only=&#x22;true&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Required&#x22; required=&#x22;true&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;With error message&#x22; error-message=&#x22;Error message&#x22;&#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;With placeholder message&#x22; placeholder=&#x22;I am a placeholder.&#x22;&#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Multiline resizable&#x22; multiline=&#x22;true&#x22; rows=&#x22;4&#x22; resizable.bind=&#x22;true&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Multiline auto adjust&#x22; multiline=&#x22;true&#x22;  auto-adjust-height.bind=&#x22;true&#x22; rows=&#x22;4&#x22;  &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Multiline non resizable&#x22; multiline=&#x22;true&#x22; rows=&#x22;4&#x22; resizable.bind=&#x22;false&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Underlined&#x22; underlined=&#x22;true&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Borderless&#x22; borderless=&#x22;true&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;AutoComplete&#x22; auto-complete=&#x22;true&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Prefix&#x22; prefix=&#x22;https://&#x22;&#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;Suffix&#x22; suffix=&#x22;.com&#x22;  &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;With icon&#x22; icon-props.one-time=&#x22;{ iconName: &#x27;Calendar&#x27; }&#x22;  &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;With description&#x22; description=&#x22;A description&#x22;&#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;TextField with a string-based validator.&#x22; on-get-error-message.bind=&#x22;getErrorMessage&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+  &#x3C;du-text-field label=&#x22;TextField with a Promise-based validator.&#x22; on-get-error-message.bind=&#x22;getErrorMessagePromise&#x22; &#x3E;&#x3C;/du-text-field&#x3E;
+                      </hljs>
+                      <hljs language="typescript" linenumbers="true">
+  getErrorMessage(args:any[])
+  {
+      let value = args[0];
+      return value.length &#x3C; 3 ? &#x27;&#x27; : &#x60;The length of the input value should less than 3, actual is ${value.length}.&#x60;;
+  }
+
+  getErrorMessagePromise(args:any[]): Promise&#x3C;string&#x3E; 
+  {
+      return new Promise(resolve =&#x3E; {
+      // resolve the promise after 5 seconds.
+      //@ts-ignore
+          setTimeout(() =&#x3E; resolve(this.parent.getErrorMessage(args)), 5000);
+      });
+  }
+                      </hljs>
+                    </div>
+                    <div slot="example">
+                        <du-text-field label="Standard" ></du-text-field>
+                        <du-text-field label="Disabled" disabled="true" ></du-text-field>
+                        <du-text-field label="Read Only" read-only="true" ></du-text-field>
+                        <du-text-field label="Required" required="true" ></du-text-field>
+                        <du-text-field label="With error message" error-message="Error message"></du-text-field>
+                        <du-text-field label="With placeholder message" placeholder="I am a placeholder."></du-text-field>
+                        <du-text-field label="Multiline resizable" multiline="true" rows="4" resizable.bind="true" ></du-text-field>
+                        <du-text-field label="Multiline auto adjust" multiline="true"  auto-adjust-height.bind="true" rows="4"  ></du-text-field>
+                        <du-text-field label="Multiline non resizable" multiline="true" rows="4" resizable.bind="false" ></du-text-field>
+                        <du-text-field label="Underlined" underlined="true" ></du-text-field>
+                        <du-text-field label="Borderless" borderless="true" ></du-text-field>
+                        <du-text-field label="AutoComplete" auto-complete="true" ></du-text-field>
+                        <du-text-field label="Prefix" prefix="https://"></du-text-field>
+                        <du-text-field label="Suffix" suffix=".com"  ></du-text-field>
+                        <du-text-field label="With icon" icon-props.one-time="{ iconName: 'Calendar' }"  ></du-text-field>
+                        <du-text-field label="With description" description="A description"></du-text-field>
+                        <du-text-field label="TextField with a string-based validator." on-get-error-message.bind="getErrorMessage" ></du-text-field>
+                        <du-text-field label="TextField with a Promise-based validator." on-get-error-message.bind="getErrorMessagePromise" ></du-text-field>
+                    </div>
+                  </examplecard>
+  </div>
+</template>

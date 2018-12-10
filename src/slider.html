@@ -1,0 +1,35 @@
+<template>
+  <require from="./examplecard.css"></require>
+  <require from="./slider.css"></require>
+  <require from="./examplecard"></require> <require from="hljs"></require>
+  <require from="highlight.js/styles/dracula.css"></require>
+  
+
+  <div
+    class="content"
+    style="bottom: unset; top: 0px; background-color: rgb(3, 131, 135);">
+    <h1 class="pageTitle">Slider</h1>
+    <div
+      role="presentation"
+      class="ms-FocusZone"
+      
+    ></div>
+  </div>
+  <div class="PageSection">
+        <examplecard title="Slider">
+                <div slot="code">
+                  <hljs language="html" linenumbers="true">
+  &#x3C;du-slider label=&#x22;Basic example:&#x22; max=&#x22;100&#x22; step=&#x22;5&#x22; value=&#x22;25&#x22; default-value=&#x22;25&#x22; show-value=&#x22;true&#x22; on-change.bind=&#x22;onchange&#x22;&#x3E;&#x3C;/du-slider&#x3E;
+  &#x3C;du-slider label=&#x22;Min max example:&#x22; min.bind=&#x22;-10&#x22; max=&#x22;50&#x22; step=&#x22;1&#x22;, default-value=&#x22;2&#x22; show-value=&#x22;true&#x22; &#x3E;&#x3C;/du-slider&#x3E;
+  &#x3C;du-slider label=&#x22;Disabled example:&#x22; min.bind=&#x22;50&#x22; max=&#x22;500&#x22; step=&#x22;50&#x22;, default-value=&#x22;300&#x22; show-value=&#x22;true&#x22; disabled=&#x22;true&#x22;&#x3E;&#x3C;/du-slider&#x3E;
+                  </hljs>
+                </div>
+                <div slot="example">
+                  <du-slider label="Basic example:" max="100" step="5" value="25" default-value="25" show-value="true" on-change.bind="onchange"></du-slider>
+                  <du-slider label="Min max example:" min.bind="-10" max="50" step="1", default-value="2" show-value="true" ></du-slider>
+                  <du-slider label="Disabled example:" min.bind="50" max="500" step="50", default-value="300" show-value="true" disabled="true"></du-slider>
+              </examplecard>
+
+
+  </div>
+</template>

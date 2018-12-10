@@ -14,7 +14,7 @@ const when = (condition, config, negativeConfig) =>
   condition ? ensureArray(config) : ensureArray(negativeConfig);
 
 // primary config:
-const title = 'Aurelia Navigation Skeleton';
+const title = 'au-office-ui Demo site';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
@@ -122,16 +122,6 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
         // because Aurelia would try to require it again in runtime
         use: cssRules
       },
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-        issuer: /\.[tj]s$/i
-      },
-      {
-        test: /\.scss$/,
-        use: ['css-loader', 'sass-loader'],
-        issuer: /\.html?$/i
-      },
       { test: /\.html$/i, loader: 'html-loader' },
       { test: /\.ts$/, loader: "ts-loader" },
       // use Bluebird as the global Promise implementation:
@@ -160,6 +150,10 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
     }),
     new HtmlWebpackPlugin({
       template: 'index.ejs',
+      minify: production ? {
+        removeComments: true,
+        collapseWhitespace: true
+      } : undefined,
       metadata: {
         // available in index.ejs //
         title, server, baseUrl

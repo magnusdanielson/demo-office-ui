@@ -1,0 +1,86 @@
+<template>
+  <require from="./examplecard.css"></require>
+  <require from="./examplecard"></require> <require from="hljs"></require>
+  <require from="highlight.js/styles/dracula.css"></require>
+  
+  <div
+    class="content"
+    style="bottom: unset; top: 0px; background-color: rgb(3, 131, 135);"
+  >
+    <h1 class="pageTitle">Search</h1>
+    <div role="presentation" class="ms-FocusZone"></div>
+  </div>
+  <div class="PageSection">
+    <examplecard title="Default Search">
+      <div slot="code"><hljs language="html" linenumbers="true">
+  &#x3C;du-search-box
+  placeholder=&#x22;Search&#x22;
+  on-search.bind=&#x22;onSearch&#x22;
+  on-focus.bind=&#x22;onFocus&#x22;
+  on-blur.bind=&#x22;onBlur&#x22;
+  on-change.bind=&#x22;onChange&#x22;&#x3E;&#x3C;/du-search-box&#x3E;
+      </hljs>
+      <hljs language="javascript"  linenumbers="true">
+  onSearch(args:any[])
+  {
+      let newValue = args[0];
+      console.log(  'onSearch new value = ' +  newValue);
+  }
+
+  onBlur()
+  {
+      console.log("onBlur");
+  }
+
+  onChange(args:any[])
+  {
+      let newValue = args[0];
+      console.log( 'onChange new value = ' + newValue);
+  }
+
+  onFocus()
+  {
+      console.log("onfocus");
+  }
+      </hljs>
+    </div>
+      <div slot="example">
+        <du-search-box
+          placeholder="Search"
+          on-search.bind="onSearch"
+          on-focus.bind="onFocus"
+          on-blur.bind="onBlur"
+          on-change.bind="onChange"></du-search-box>
+      </div>
+    </examplecard>
+    <examplecard title="Underlined Search">
+      <div slot="code"><hljs language="html" linenumbers="true">
+  &#x3C;du-search-box
+  placeholder=&#x22;Search&#x22;
+  on-search.bind=&#x22;onSearch&#x22;
+  underlined=&#x22;true&#x22;&#x3E;&#x3C;/du-search-box&#x3E;
+      </hljs></div>
+      <div slot="example">
+        <du-search-box
+          placeholder="Search"
+          on-search.bind="onSearch"
+          underlined="true"></du-search-box>
+      </div>
+    </examplecard>
+
+    <examplecard title="Disabled Search">
+      <div slot="code"><hljs language="html" linenumbers="true">
+  &#x3C;du-search-box
+  placeholder=&#x22;Search&#x22;
+  on-search.bind=&#x22;onSearch&#x22;
+  disabled=&#x22;true&#x22;&#x3E;&#x3C;/du-search-box&#x3E;
+      </hljs></div>
+      <div slot="example">
+        <du-search-box
+          placeholder="Search"
+          on-search.bind="onSearch"
+          disabled="true"></du-search-box>
+      </div>
+    </examplecard>
+  </div>
+</template>

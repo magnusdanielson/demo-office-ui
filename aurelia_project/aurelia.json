@@ -1,5 +1,5 @@
 {
-  "name": "demo-au-office-ui",
+  "name": "removeau",
   "type": "project:application",
   "bundler": {
     "id": "webpack",
@@ -30,14 +30,14 @@
     "fileExtension": ".ts"
   },
   "markupProcessor": {
-    "id": "none",
-    "displayName": "None",
+    "id": "minimum",
+    "displayName": "Minimal Minification",
     "fileExtension": ".html"
   },
   "cssProcessor": {
-    "id": "sass",
-    "displayName": "Sass",
-    "fileExtension": ".scss"
+    "id": "none",
+    "displayName": "None",
+    "fileExtension": ".css"
   },
   "jsonProcessor": {
     "id": "none",
@@ -50,13 +50,17 @@
   },
   "unitTestRunners": [
     {
+      "id": "jest",
+      "displayName": "Jest"
+    },
+    {
       "id": "karma",
       "displayName": "Karma"
     }
   ],
   "integrationTestRunner": {
-    "id": "protractor",
-    "displayName": "Protractor"
+    "id": "none",
+    "displayName": "None"
   },
   "paths": {
     "root": "src",
@@ -70,5 +74,5 @@
     "id": "jasmine",
     "displayName": "Jasmine"
   },
-  "packageManager": "npm"
+  "packageManager": "yarn"
 }

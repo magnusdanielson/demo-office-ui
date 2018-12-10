@@ -6,12 +6,15 @@ import {PLATFORM} from 'aurelia-pal';
 import * as Bluebird from 'bluebird';
 
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
-//Bluebird.config({ warnings: { wForgottenReturn: false } });
+Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
-    .feature(PLATFORM.moduleName('resources/index'));
+    .feature(PLATFORM.moduleName('resources/index'))
+    .plugin(PLATFORM.moduleName('aurelia-portal-attribute'))
+    .plugin(PLATFORM.moduleName("@dunite/au-office-ui"));
+    //.plugin(PLATFORM.moduleName('aurelia-highlightjs'));
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
