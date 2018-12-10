@@ -31,3 +31,4 @@ node_modules
 /scripts
 /src/environment.js
 /src/environment.ts
+dist/
