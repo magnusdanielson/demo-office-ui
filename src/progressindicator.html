@@ -1,0 +1,46 @@
+<template>
+  <require from="./examplecard.css"></require>
+  <require from="./examplecard"></require> <require from="hljs"></require>
+  <require from="highlight.js/styles/dracula.css"></require>
+  
+
+  <div
+    class="content"
+    style="bottom: unset; top: 0px; background-color: rgb(3, 131, 135);">
+    <h1 class="pageTitle">MessageBar</h1>
+    <div
+      role="presentation"
+      class="ms-FocusZone"
+      
+    ></div>
+  </div>
+  <div class="PageSection">
+        <examplecard title="Default ProgressIndicator">
+                <div slot="code">
+                  <hljs language="html" linenumbers="true">
+                  </hljs>
+                  <hljs language="javascript" linenumbers="true">
+                  </hljs>
+                </div>
+                <div slot="example">
+                    <du-progress-indicator percent-complete.bind="percentComplete"  label="Example title" description="Example description" ></du-progress-indicator>
+                </div>
+              </examplecard>
+
+
+              <examplecard title="Indeterminate ProgressIndicator">
+                  <div slot="code">
+                    <hljs language="html" linenumbers="true">
+                    </hljs>
+                    <hljs language="javascript" linenumbers="true">
+                    </hljs>
+                  </div>
+                  <div slot="example">
+                      <du-progress-indicator  label="Example title" description="Example description" ></du-progress-indicator>
+                  </div>
+                </examplecard>
+
+
+
+  </div>
+</template>

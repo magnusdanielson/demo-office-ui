@@ -20,6 +20,8 @@ export class App {
 
   }
 
+  
+
   public groups = [
     {
       links: [
@@ -151,6 +153,11 @@ export class App {
               name: 'MessageBar',
               url: '#messagebar',
               key: 'messagebar'
+            },
+            {
+              name: 'ProgressIndicator',
+              url: '#progressindicator',
+              key: 'progressindicator'
             }
           ],
           isExpanded: false
@@ -187,6 +194,7 @@ export class App {
       { route: '/colorpicker',  moduleId: PLATFORM.moduleName('./colorpicker'), name:'colorpicker', nav: true,   title: 'Colorpicker' },
       { route: '/datepicker',  moduleId: PLATFORM.moduleName('./datepicker'), name:'datepicker', nav: true,   title: 'Datepicker' },
       { route: '/messagebar',  moduleId: PLATFORM.moduleName('./messagebar'), name:'messagebar', nav: true,   title: 'Messagebar' },
+      { route: '/progressindicator',  moduleId: PLATFORM.moduleName('./progressindicator'), name:'progressindicator', nav: true,   title: 'Progress Indicator' },
 
       { route: '/why',  moduleId: PLATFORM.moduleName('./why'), name:'why', nav: true,   title: 'Why' }
       ]);

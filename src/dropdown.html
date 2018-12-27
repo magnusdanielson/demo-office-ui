@@ -20,118 +20,77 @@
               <examplecard title="Dropdown">
                     <div slot="code">
                       <hljs language="html" linenumbers="true">
-  &#x3C;du-choice-group defaultSelectedKey=&#x22;B&#x22; options.one-time=&#x22;[
-    {
-      key: &#x27;A&#x27;,
-      text: &#x27;Option A&#x27;,
-      &#x27;data-automation-id&#x27;: &#x27;auto1&#x27;
-    },
-    {
-      key: &#x27;B&#x27;,
-      text: &#x27;Option B&#x27;
-    },
-    {
-      key: &#x27;C&#x27;,
-      text: &#x27;Option C&#x27;,
-      disabled: true
-    },
-    {
-      key: &#x27;D&#x27;,
-      text: &#x27;Option D&#x27;,
-      disabled: true
-    }
-  ]&#x22; on-change.bind=&#x22;onChange&#x22; label=&#x22;Pick one&#x22;&#x3E;&#x3C;/du-choice-group&#x3E;
                       </hljs>
                     </div>
                     <div slot="example">
                       
                       <du-dropdown placeholder="Select an Option" label="Basic uncontrolled example" id="Basicdrop1" 
-                      options.one-time="[
-                      { key: 'Header', text: 'Actions', itemType: DropdownMenuItemType.Header },
-                      { key: 'A', text: 'Option a', title: 'I am option a.' },
-                      { key: 'B', text: 'Option b' },
-                      { key: 'C', text: 'Option c', disabled: true },
-                      { key: 'D', text: 'Option d' },
-                      { key: 'E', text: 'Option e' },
-                      { key: 'divider_2', text: '-', itemType: DropdownMenuItemType.Divider },
-                      { key: 'Header2', text: 'People', itemType: DropdownMenuItemType.Header },
-                      { key: 'F', text: 'Option f' },
-                      { key: 'G', text: 'Option g' },
-                      { key: 'H', text: 'Option h' },
-                      { key: 'I', text: 'Option i' },
-                      { key: 'J', text: 'Option j' }
-                    ]"></du-dropdown> 
+                      options.one-time="simpleOptions"></du-dropdown> 
                         
                     </div>
                   </examplecard>
 
 
 
-                  <examplecard title="ChoiceGroups with images">
+                  <examplecard title="Dropdown, disabled, default selected">
                       <div slot="code">
                         <hljs language="html" linenumbers="true">
-  &#x3C;du-choice-group default-selected-key=&#x22;bar&#x22; options.one-time=&#x22;optionsBar&#x22; on-change.bind=&#x22;onChange&#x22; label=&#x22;Pick one&#x22;&#x3E;&#x3C;/du-choice-group&#x3E;
-                          </hljs>
-                        <hljs language="typescript" linenumbers="true">
-  public optionsBar:any =[
-    {
-      key: 'bar',
-      imageSrc: "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/choicegroup-bar-unselected.png",
-      imageAlt: 'Bar chart icon',
-      selectedImageSrc: "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/choicegroup-bar-selected.png",
-      imageSize: { width: 32, height: 32 },
-      text: 'Clustered bar chart' // This text is long to show text wrapping.
-    },
-    {
-      key: 'pie',
-      imageSrc: "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/choicegroup-bar-unselected.png",
-      imageAlt: 'Bar chart icon',
-      selectedImageSrc: "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/choicegroup-bar-selected.png",
-      imageSize: { width: 32, height: 32 },
-      text: 'Pie chart'
-    }
-  ];
                         </hljs>
                       </div>
                       <div slot="example">
-                          
-                        <du-choice-group default-selected-key="bar" options.one-time="optionsBar" on-change.bind="onChange" label="Pick one"></du-choice-group> 
+                        
+                        <du-dropdown placeholder="Select an Option" 
+                        default-selected-key="D"
+                        label="Disabled uncontrolled example with defaultSelectedKey:" id="dropDefaultKey" 
+                        options.one-time="[
+                        { key: 'Header', text: 'Actions', itemType: DropdownMenuItemType.Header },
+                        { key: 'A', text: 'Option a', title: 'I am option a.' },
+                        { key: 'B', text: 'Option b' },
+                        { key: 'C', text: 'Option c', disabled: true },
+                        { key: 'D', text: 'Option d' },
+                        { key: 'E', text: 'Option e' }
+                      ]" disabled.one-time="true"></du-dropdown> 
                           
                       </div>
                     </examplecard>
 
-
-                    <examplecard title="ChoiceGroups with icons">
+          
+                    <examplecard title="Multi-Select uncontrolled example, required">
                         <div slot="code">
                           <hljs language="html" linenumbers="true">
-  &#x3C;du-choice-group default-selected-key=&#x22;week&#x22; options.one-time=&#x22;optionsIcon&#x22; on-change.bind=&#x22;onChange&#x22; label=&#x22;Pick one&#x22;&#x3E;&#x3C;/du-choice-group&#x3E;
-                            </hljs>
-                          <hljs language="typescript" linenumbers="true">
-  public optionsIcon:any = [
-    {
-      key: 'day',
-      iconProps: { iconName: 'CalendarDay' },
-      text: 'Day'
-    },
-    {
-      key: 'week',
-      iconProps: { iconName: 'CalendarWeek' },
-      text: 'Week'
-    },
-    {
-      key: 'month',
-      iconProps: { iconName: 'Calendar' },
-      text: 'Month',
-      disabled: true
-    }
-  ]
                           </hljs>
                         </div>
                         <div slot="example">
-                            
-                          <du-choice-group default-selected-key="week" options.one-time="optionsIcon" on-change.bind="onChange" label="Pick one"></du-choice-group> 
+                          
+                          <du-dropdown placeholder="Select options"
+                          label="Multi-Select uncontrolled example:"
+                          default-selected-keys.one-time="['Apple', 'Banana', 'Orange']"
+                          multi-select.one-time="true"
+                          options.one-time="fruits" required.one-time="true"></du-dropdown> 
                             
                         </div>
                       </examplecard>
+
+
+                      <examplecard title="Dropdown, controlled no-banana, with error message">
+                          <div slot="code">
+                            <hljs language="html" linenumbers="true">
+                            </hljs>
+                          </div>
+                          <div slot="example">
+                            
+                            <du-dropdown placeholder="Select an Option" 
+                            selected-key.bind="selectedItem"
+                            label="Dropdown, controlled no-banana, with error message" 
+                            id="dropDefaultKey" 
+                            options.one-time="fruits" 
+                            on-changed.bind="onChange"
+                            on-blur.bind="onBlur"
+                            on-focus.bind="onFocus"
+                            error-message="An error"
+                            ></du-dropdown>
+                              
+                          </div>
+                        </examplecard>
   </div>
 </template>
