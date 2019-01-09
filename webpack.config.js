@@ -122,6 +122,16 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
         // because Aurelia would try to require it again in runtime
         use: cssRules
       },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        issuer: /\.[tj]s$/i
+      },
+      {
+        test: /\.scss$/,
+        use: ['css-loader', 'sass-loader'],
+        issuer: /\.html?$/i
+      },
       { test: /\.html$/i, loader: 'html-loader' },
       { test: /\.ts$/, loader: "ts-loader" },
       // use Bluebird as the global Promise implementation:
@@ -152,7 +162,15 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
       template: 'index.ejs',
       minify: production ? {
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        ignoreCustomFragments: [/\${.*?}/g]
       } : undefined,
       metadata: {
         // available in index.ejs //

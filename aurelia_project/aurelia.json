@@ -30,14 +30,14 @@
     "fileExtension": ".ts"
   },
   "markupProcessor": {
-    "id": "minimum",
-    "displayName": "Minimal Minification",
+    "id": "maximum",
+    "displayName": "Maximum Minification",
     "fileExtension": ".html"
   },
   "cssProcessor": {
-    "id": "none",
-    "displayName": "None",
-    "fileExtension": ".css"
+    "id": "sass",
+    "displayName": "Sass",
+    "fileExtension": ".scss"
   },
   "jsonProcessor": {
     "id": "none",

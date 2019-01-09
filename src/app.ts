@@ -134,6 +134,15 @@ export class App {
           name: 'Pickers',
           links: [
             {
+              name: 'PeoplePickers',
+              url: '#peoplepickers',
+              key: 'peoplepickers'
+            },{
+              name: 'TagPicker',
+              url: '#tagpicker',
+              key: 'tagpicker'
+            },
+            {
               name: 'ColorPicker',
               url: '#colorpicker',
               key: 'colorpicker'
@@ -158,6 +167,28 @@ export class App {
               name: 'ProgressIndicator',
               url: '#progressindicator',
               key: 'progressindicator'
+            },
+            {
+              name: 'Spinner',
+              url: '#spinner',
+              key: 'spinner'
+            }
+          ],
+          isExpanded: false
+        }
+        ,
+        {
+          name: 'Surfaces',
+          links: [
+            {
+              name: 'Callout',
+              url: '#callout',
+              key: 'callout'
+            },
+            {
+              name: 'Spinner',
+              url: '#spinner',
+              key: 'spinner'
             }
           ],
           isExpanded: false
@@ -174,33 +205,49 @@ export class App {
     config.title = 'au-office-ui';
     config.map([
       { route: ['','/gettingstarted'],  moduleId: PLATFORM.moduleName('./gettingstarted'), name:'gettingstarted', nav: true,   title: 'Getting started' },
+      { route: '/why',  moduleId: PLATFORM.moduleName('./why'), name:'why', nav: true,   title: 'Why' },
+      
+      // Basic Inputs
       { route: '/buttons',  moduleId: PLATFORM.moduleName('./buttons'), name:'buttons', nav: true,   title: 'Buttons' },
       { route: '/checkbox',  moduleId: PLATFORM.moduleName('./checkbox'), name:'checkbox', nav: true,   title: 'Checkbox' },
       { route: '/choicegroup',  moduleId: PLATFORM.moduleName('./choicegroup'), name:'choicegroup', nav: true,   title: 'ChoiceGroup' },
-      { route: '/dropdown',  moduleId: PLATFORM.moduleName('./dropdown'), name:'dropdown', nav: true,   title: 'Dropdown' },
       { route: '/combobox',  moduleId: PLATFORM.moduleName('./combobox'), name:'combobox', nav: true,   title: 'Combobox' },
+      { route: '/dropdown',  moduleId: PLATFORM.moduleName('./dropdown'), name:'dropdown', nav: true,   title: 'Dropdown' },
       { route: '/label',  moduleId: PLATFORM.moduleName('./label'), name:'label', nav: true,   title: 'Label' },
       { route: '/slider',  moduleId: PLATFORM.moduleName('./slider'), name:'slider', nav: true,   title: 'Slider' },
       { route: '/spinbutton',  moduleId: PLATFORM.moduleName('./spinbutton'), name:'spinbutton', nav: true,   title: 'Spinbutton' },
       { route: '/textfield',  moduleId: PLATFORM.moduleName('./textfield'), name:'textfield', nav: true,   title: 'Textfield' },
       { route: '/toggle',  moduleId: PLATFORM.moduleName('./toggle'), name:'toggle', nav: true,   title: 'Toggle' },
 
+      // Navigation
       { route: '/breadcrumb',  moduleId: PLATFORM.moduleName('./breadcrumb'), name:'breadcrumb', nav: true,   title: 'Breadcrumb' },
       { route: '/commandbar',  moduleId: PLATFORM.moduleName('./commandbar'), name:'commandbar', nav: true,   title: 'Commandbar' },
       { route: '/nav',  moduleId: PLATFORM.moduleName('./nav'), name:'nav', nav: true,   title: 'Nav' },
       { route: '/pivot',  moduleId: PLATFORM.moduleName('./pivot'), name:'pivot', nav: true,   title: 'Pivot' },
       { route: '/search',  moduleId: PLATFORM.moduleName('./search'), name:'search', nav: true,   title: 'Search' },
 
+      // Content
+
+      // Pickers
+      { route: '/tagpicker',  moduleId: PLATFORM.moduleName('./pickers'), name:'tagpicker', nav: true,   title: 'Tagpicker' },
       { route: '/colorpicker',  moduleId: PLATFORM.moduleName('./colorpicker'), name:'colorpicker', nav: true,   title: 'Colorpicker' },
       { route: '/datepicker',  moduleId: PLATFORM.moduleName('./datepicker'), name:'datepicker', nav: true,   title: 'Datepicker' },
+      { route: '/peoplepickers',  moduleId: PLATFORM.moduleName('./peoplepickers'), name:'peoplepickers', nav: true,   title: 'PeoplePickers' },
+
+      // Progress & Validation
       { route: '/messagebar',  moduleId: PLATFORM.moduleName('./messagebar'), name:'messagebar', nav: true,   title: 'Messagebar' },
       { route: '/progressindicator',  moduleId: PLATFORM.moduleName('./progressindicator'), name:'progressindicator', nav: true,   title: 'Progress Indicator' },
+      { route: '/spinner',  moduleId: PLATFORM.moduleName('./spinner'), name:'spinner', nav: true,   title: 'Spinner' },
 
-      { route: '/why',  moduleId: PLATFORM.moduleName('./why'), name:'why', nav: true,   title: 'Why' }
+
+      // Surfaces
+      { route: '/callout',  moduleId: PLATFORM.moduleName('./surfaces/callout'), name:'callout', nav: true,   title: 'Callout' }
+      
+
       ]);
 
     this.router = router;
-  console.log(router);
+    //console.log(router);
   }
 
 }
