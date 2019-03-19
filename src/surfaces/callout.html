@@ -20,9 +20,61 @@
       <examplecard title="Default Callout">
           <div slot="code">
             <hljs language="html" linenumbers="true">
-  &#x3C;du-breadcrumb items.one-time=&#x22;items&#x22;&#x3E;&#x3C;/du-breadcrumb&#x3E; 
+  &#x3C;div class=&#x22;buttonArea&#x22; id=&#x22;menuButtonElement&#x22; style=&#x22;vertical-align: top; display: inline-block; text-align: center;&#x22; &#x3E;
+    &#x3C;du-default-button id=&#x22;toggleCallout&#x22; on-click.bind=&#x22;_onShowMenuClicked&#x22; text=&#x22;${isCalloutVisible ? &#x27;Hide callout&#x27; : &#x27;Show callout&#x27;}&#x22; /&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;du-callout
+  class-name=&#x22;ms-CalloutExample-callout&#x22;
+  role=&#x27;alertdialog&#x27;
+  gap-space.one-time=&#x22;0&#x22;
+  target.bind=&#x22;menuButtonElement&#x22;
+  on-dismiss=&#x22;_onCalloutDismiss&#x22;
+  set-initial-focus.one-time=&#x22;true&#x22;
+  do-not-layer.one-time=&#x22;true&#x22;
+  final-height.one-time=&#x22;200&#x22;
+  callout-width.one-time=&#x22;200&#x22;
+  show.bind=&#x22;isCalloutVisible&#x22;
+  &#x3E;&#x3C;div class=&#x22;du-Callout&#x22;&#x3E;
+      &#x3C;div class=&#x22;ms-CalloutExample-header&#x22;&#x3E;
+          &#x3C;p class=&#x22;ms-CalloutExample-title&#x22; id=&#x22;callout-label-1&#x22;&#x3E;
+            All of your favorite people
+          &#x3C;/p&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;ms-CalloutExample-inner&#x22;&#x3E;
+          &#x3C;div class=&#x22;ms-CalloutExample-content&#x22;&#x3E;
+            &#x3C;p class=&#x22;ms-CalloutExample-subText&#x22; id=&#x22;callout-description-1&#x22;&#x3E;
+              Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
+            &#x3C;/p&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;div class=&#x22;ms-CalloutExample-actions&#x22;&#x3E;
+            &#x3C;a class=&#x22;ms-CalloutExample-link&#x22; href=&#x22;http://microsoft.com&#x22;&#x3E;
+              Go to microsoft
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;&#x3C;/du-callout&#x3E; 
             </hljs>
             <hljs language="javascript" linenumbers="true">
+  isCalloutVisible:boolean = false;
+  menuButtonElement:Element;
+  
+  _onShowMenuClicked()
+  {
+    //@ts-ignore
+    this.parent.isCalloutVisible = !this.parent.isCalloutVisible;
+  }
+  
+  _onCalloutDismiss()
+  {
+    console.log("_onCalloutDismiss");
+    //@ts-ignore
+    this.parent.isCalloutVisible = false;
+  }
+
+  attached()
+  {
+    this.menuButtonElement = document.getElementById('menuButtonElement');  
+  }
             </hljs>
           </div>
           <div slot="example">
@@ -65,9 +117,58 @@
         <examplecard title="Nested Callout... Callout with a commandbar with a sub menu">
             <div slot="code">
               <hljs language="html" linenumbers="true">
-    &#x3C;du-breadcrumb items.one-time=&#x22;items&#x22;&#x3E;&#x3C;/du-breadcrumb&#x3E; 
+    &#x3C;div class=&#x22;buttonArea&#x22; id=&#x22;menuButtonElement2&#x22; style=&#x22;vertical-align: top; display: inline-block; text-align: center;&#x22; &#x3E;
+        &#x3C;du-default-button id=&#x22;toggleCallout2&#x22; on-click.bind=&#x22;_onShowMenuClicked2&#x22; text=&#x22;${isCalloutVisible2 ? &#x27;Hide callout&#x27; : &#x27;Show callout&#x27;}&#x22; /&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;du-callout style=&#x22;z-index:100;&#x22;
+    class-name=&#x22;ms-CalloutExample-callout&#x22;
+    role=&#x27;alertdialog&#x27;
+    gap-space.one-time=&#x22;0&#x22;
+    target.bind=&#x22;menuButtonElement2&#x22;
+    on-dismiss=&#x22;_onCalloutDismiss2&#x22;
+    set-initial-focus.one-time=&#x22;true&#x22;
+    do-not-layer.one-time=&#x22;true&#x22;
+    css=&#x22;display:${isCalloutVisible2 ? &#x27;block;&#x27; : &#x27;none;&#x27;}&#x22;
+    callout-width.one-time=&#x22;400&#x22;&#x3E;
+    &#x3C;div class=&#x22;du-Callout&#x22;&#x3E;
+        &#x3C;div class=&#x22;ms-CalloutExample-header&#x22;&#x3E;
+            &#x3C;p class=&#x22;ms-CalloutExample-title&#x22; id=&#x22;callout-label-2&#x22;&#x3E;
+              All of your favorite people
+            &#x3C;/p&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;div class=&#x22;ms-CalloutExample-inner&#x22;&#x3E;
+            &#x3C;div class=&#x22;ms-CalloutExample-content&#x22;&#x3E;
+              &#x3C;p class=&#x22;ms-CalloutExample-subText&#x22; id=&#x22;callout-description-2&#x22;&#x3E;
+                Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
+              &#x3C;/p&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div &#x3E;
+                &#x3C;du-command-bar  items.one-time=&#x22;getItems()&#x22;  &#x3E;&#x3C;/du-command-bar&#x3E;
+              &#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/du-callout&#x3E;
               </hljs>
               <hljs language="javascript" linenumbers="true">
+  isCalloutVisible2:boolean = false;
+  menuButtonElement2:Element;
+
+  
+  _onShowMenuClicked2()
+  {
+    this.menuButtonElement2 = document.getElementById('menuButtonElement2');
+    //@ts-ignore
+    this.parent.isCalloutVisible2 = !this.parent.isCalloutVisible2;
+    
+  }
+
+  _onCalloutDismiss2()
+  {
+    console.log("_onCalloutDismiss2");
+    this.menuButtonElement2 = null;
+    //@ts-ignore
+    this.parent.isCalloutVisible2 = false;
+  }
               </hljs>
             </div>
             <div slot="example">

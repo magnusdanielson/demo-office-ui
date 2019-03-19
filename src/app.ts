@@ -189,6 +189,21 @@ export class App {
               name: 'Spinner',
               url: '#spinner',
               key: 'spinner'
+            },
+            {
+              name: 'DocumentCard',
+              url: '#documentcard',
+              key: 'documentcard'
+            },
+            {
+              name: 'Dialog',
+              url: '#dialog',
+              key: 'dialog'
+            },
+            {
+              name: 'Test',
+              url: '#test',
+              key: 'test'
             }
           ],
           isExpanded: false
@@ -241,7 +256,10 @@ export class App {
 
 
       // Surfaces
-      { route: '/callout',  moduleId: PLATFORM.moduleName('./surfaces/callout'), name:'callout', nav: true,   title: 'Callout' }
+      { route: '/callout',  moduleId: PLATFORM.moduleName('./surfaces/callout'), name:'callout', nav: true,   title: 'Callout' },
+      { route: '/documentcard',  moduleId: PLATFORM.moduleName('./surfaces/documentcard'), name:'documentcard', nav: true,   title: 'Documentcard' },
+      { route: '/dialog',  moduleId: PLATFORM.moduleName('./surfaces/dialog'), name:'dialog', nav: true,   title: 'Dialog' },
+      { route: '/test',  moduleId: PLATFORM.moduleName('./surfaces/test'), name:'test', nav: true,   title: 'Test' }
       
 
       ]);
