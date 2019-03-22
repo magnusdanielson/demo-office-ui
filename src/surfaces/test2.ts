@@ -1,5 +1,6 @@
 import {  ViewCompiler, ViewResources, BehaviorInstruction, processContent, customElement, inject, noView } from 'aurelia-framework';
-import { Button, IButtonProps } from 'office-ui-fabric-react/lib/Button';
+//import { Button, IButtonProps } from 'office-ui-fabric-react/lib/Button';
+import { MessageBarType,MessageBar, IMessageBarProps } from 'office-ui-fabric-react/lib/MessageBar';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { LogManager, bindable, bindingMode } from 'aurelia-framework';
@@ -43,6 +44,7 @@ class ReactWrapper2 {
 
     public unbind() {
       ReactDom.unmountComponentAtNode(this.element);
+    
     }
 
     onChangeEvent(propertyName: string, newValue: any)
@@ -79,11 +81,21 @@ class ReactWrapper2 {
     console.log("OBJECT");
     console.log(this);
     
-    let a:any = {};
-    //@ts-ignore
-    a.onClick = this.onClick;
-    //@ts-ignore
-    a.text = this.text;
+    // let a:any = {};
+    // //@ts-ignore
+    // a.onClick = this.onClick;
+    // //@ts-ignore
+    // a.text = this.text;
+
+    let a= <IMessageBarProps>{};
+    a.isMultiline = false;
+    a.messageBarType = MessageBarType.warning;
+    a.onDismiss = () => { console.log("mydismiss");};
+    // a.dismissButtonAriaLabel = <any>{};
+    // a.truncated = <any>{};
+    // a.overflowButtonAriaLabel = <any>{};
+    // a.actions = <any>{};
+
 
     console.log("OBJECT A");
     console.log(a);
@@ -91,12 +103,42 @@ class ReactWrapper2 {
 
     this.innerid = Date.now();
 
-    const reactElement = React.createElement(Button, a,
-      React.createElement("span",{id:this.innerid}      ));
+    const reactElement = React.createElement(MessageBar, a,
+      React.createElement("span",{id:this.innerid,ref:(what:any)=>
+      {
+        console.log("myothercb");
+    console.log(what);
+    console.log(this);
+
+    let auelement = this.element.getElementsByTagName("au-content")[0];
+
+    var newParent = document.getElementById(this.innerid.toString());
+    
+    console.log(auelement);
+    console.log(newParent);
+
+    if(newParent == null)
+    {
+      return;
+    }
+    while (auelement.childNodes.length > 0) {
+        newParent.appendChild(auelement.childNodes[0]);
+    }
+
+      }}      ));
     this.reactComponent = reactElement;
-    ReactDom.render(reactElement, this.container);
+
+    console.log(this.reactComponent)
+    var domrender = ReactDom.render(reactElement, this.container, ()=>
+    {
+      console.log("RENDEEEER COMPLEEEETE");
+
+    });
+    console.log(domrender);
+    
+    this.log.debug('xxxx renderReact COMPLTGE');
   }
-  
+
 
 
 
@@ -141,14 +183,10 @@ export class test2 extends ReactWrapper2
   attached()
   {
     this.log.debug('attached2' + this.innerid);
-    
-    let auelement = this.element.getElementsByTagName("au-content")[0];
 
-    var newParent = document.getElementById(this.innerid.toString());
     
-    while (auelement.childNodes.length > 0) {
-        newParent.appendChild(auelement.childNodes[0]);
-    }
+    
+    
 
 
   }
