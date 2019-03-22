@@ -10,6 +10,8 @@ class ReactWrapper2 {
     public container: HTMLElement;
     public reactComponent = {};
   
+    public innerid:number;
+
     public parent: any;
 
     public log: Logger;
@@ -63,7 +65,7 @@ class ReactWrapper2 {
       this.container.setAttribute('class', 'au-react-root');
       // <span id="${id}" portal="target ${id} ms-Label"><slot></slot></span>
       
-      //let id = Date.now();
+      
       //this.container.setAttribute('id', id);
       //this.container.setAttribute('portal', `target #${id} ms-Label`);
       //let slot = document.createElement('slot');
@@ -87,7 +89,10 @@ class ReactWrapper2 {
     console.log(a);
     
 
-    const reactElement = React.createElement(Button, a);
+    this.innerid = Date.now();
+
+    const reactElement = React.createElement(Button, a,
+      React.createElement("span",{id:this.innerid}      ));
     this.reactComponent = reactElement;
     ReactDom.render(reactElement, this.container);
   }
@@ -124,16 +129,28 @@ export class test2 extends ReactWrapper2
 
   constructor(element) {
     super(element);
+    this.element = element;
   }
 
   public render() {
     this.log.debug('render2');
+
     this.renderReact();
   }
 
   attached()
   {
-    this.log.debug('attached2');
+    this.log.debug('attached2' + this.innerid);
+    
+    let auelement = this.element.getElementsByTagName("au-content")[0];
+
+    var newParent = document.getElementById(this.innerid.toString());
+    
+    while (auelement.childNodes.length > 0) {
+        newParent.appendChild(auelement.childNodes[0]);
+    }
+
+
   }
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) 
