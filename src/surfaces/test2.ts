@@ -1,10 +1,62 @@
 import {  ViewCompiler, ViewResources, BehaviorInstruction, processContent, customElement, inject, noView } from 'aurelia-framework';
 //import { Button, IButtonProps } from 'office-ui-fabric-react/lib/Button';
-import { MessageBarType,MessageBar, IMessageBarProps } from 'office-ui-fabric-react/lib/MessageBar';
+//import { MessageBarType,MessageBar, IMessageBarProps } from 'office-ui-fabric-react/lib/MessageBar';
+import { DialogType, Dialog, IDialogProps } from 'office-ui-fabric-react/lib/Dialog';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { LogManager, bindable, bindingMode } from 'aurelia-framework';
 import { Logger } from 'aurelia-logging';
+
+class DialogWrapper extends React.Component
+{
+  constructor()
+  {
+    
+    super();
+
+  }
+
+  componentDidMount()
+  {
+    console.log("componentDidMountcomponentDidMountcomponentDidMount");
+
+  }
+
+  render()
+  {
+    console.log("renderrenderrenderrenderrenderrenderrenderrender");
+    let a= <IDialogProps>{};
+    a.dialogContentProps = {
+      type: DialogType.normal,
+      title: 'A Title!',
+      subText: 'Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.'
+    };
+    a.hidden = window["my"];
+    a.className = "magnus";
+    a.modalProps = {
+      titleAriaId: 'myLabelId',
+      subtitleAriaId: 'mySubTextId',
+      isBlocking: false,
+      containerClassName: 'ms-dialogMainOverride'
+    }
+    a.onDismiss = ()=>
+    {
+      window["my"] = true;
+      console.log(this);
+      console.log("dialog dismiss")
+      //@ts-ignore
+      this.setState({ hideDialog: true });
+      
+    };
+
+    
+
+    let com = React.createElement(Dialog,a      );
+    console.log("createElementcreateElementcreateElementcreateElement");
+    console.log(com);
+    return com;
+  }
+}
 
 class ReactWrapper2 {
     public element: HTMLElement;
@@ -18,6 +70,7 @@ class ReactWrapper2 {
     public log: Logger;
 
     constructor(element) {
+      
       this.element = element;
       this.log = LogManager.getLogger('test2');
     }
@@ -58,6 +111,7 @@ class ReactWrapper2 {
 
   renderReact() {
 
+    window["my"] = false;
     this.log.debug('xxxx renderReact');
     // this is bound to Aurelia class
     this.container = this.element.querySelector('.au-react-root');
@@ -87,14 +141,34 @@ class ReactWrapper2 {
     // //@ts-ignore
     // a.text = this.text;
 
-    let a= <IMessageBarProps>{};
-    a.isMultiline = false;
-    a.messageBarType = MessageBarType.warning;
-    a.onDismiss = () => { console.log("mydismiss");};
-    // a.dismissButtonAriaLabel = <any>{};
-    // a.truncated = <any>{};
-    // a.overflowButtonAriaLabel = <any>{};
-    // a.actions = <any>{};
+    let a= <IDialogProps>{};
+    a.dialogContentProps = {
+      type: DialogType.normal,
+      title: 'A Title!',
+      subText: 'Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.'
+    };
+    a.hidden = false;
+    a.className = "magnus";
+    a.modalProps = {
+      titleAriaId: 'myLabelId',
+      subtitleAriaId: 'mySubTextId',
+      isBlocking: false,
+      containerClassName: 'ms-dialogMainOverride'
+    }
+    a.onDismiss = ()=>
+    {
+      console.log("dialog dismiss")
+      //@ts-ignore
+      this.reactComponent.props.hidden = true;
+      console.log(this.reactComponent);
+    };
+    //@ts-ignore
+  //   a.ref = (whit:any)=>
+  //   {
+  //     console.log("ISTHIS DIALOG????");
+  //     console.log(whit);
+  // console.log(this);
+  //   }
 
 
     console.log("OBJECT A");
@@ -103,7 +177,7 @@ class ReactWrapper2 {
 
     this.innerid = Date.now();
 
-    const reactElement = React.createElement(MessageBar, a,
+    let reactElement = React.createElement(Dialog, a,
       React.createElement("span",{id:this.innerid,ref:(what:any)=>
       {
         console.log("myothercb");
@@ -126,6 +200,11 @@ class ReactWrapper2 {
     }
 
       }}      ));
+
+
+
+      reactElement = React.createElement(DialogWrapper);
+    
     this.reactComponent = reactElement;
 
     console.log(this.reactComponent)
