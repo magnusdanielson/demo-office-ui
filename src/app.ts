@@ -259,7 +259,8 @@ export class App {
       { route: '/callout',  moduleId: PLATFORM.moduleName('./surfaces/callout'), name:'callout', nav: true,   title: 'Callout' },
       { route: '/documentcard',  moduleId: PLATFORM.moduleName('./surfaces/documentcard'), name:'documentcard', nav: true,   title: 'Documentcard' },
       { route: '/dialog',  moduleId: PLATFORM.moduleName('./surfaces/dialog'), name:'dialog', nav: true,   title: 'Dialog' },
-      { route: '/test',  moduleId: PLATFORM.moduleName('./surfaces/test'), name:'test', nav: true,   title: 'Test' }
+      { route: '/test',  moduleId: PLATFORM.moduleName('./surfaces/test'), name:'test', nav: true,   title: 'Test' },
+      { route: '/jesper',  moduleId: PLATFORM.moduleName('./surfaces/jesper'), name:'jesper', nav: true,   title: 'jesper' }
       
 
       ]);

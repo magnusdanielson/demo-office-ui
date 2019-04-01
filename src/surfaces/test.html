@@ -1,7 +1,21 @@
 <template>
-    <require from="./test2"></require>
+    <require from="./DuDialog2"></require>
     <require from="./test3"></require>
-     innan test2
-    <test2 text="kalle" on-click.bind="doit"><test3></test3></test2>
+    
+
+
+    hidden:${hidden}
+    <br></br>
+    innan test2
+    <du-dialog2 view-model.ref="mytest2"  if.bind="test2if"
+    props.bind="dialogprops" hidden.bind="hidden">
+        <test3></test3>
+        <br></br>
+        <button click.delegate="swapHidden()">SwapHidden</button>
+    </du-dialog2>
     efter test2
+    <br></br>
+    test2if=${test2if}
+    <br></br>
+    <button click.delegate="test2ifSwap()">test2ifSwap</button>
 </template>
