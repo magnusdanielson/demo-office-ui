@@ -1,18 +1,18 @@
-import {  Dialog, IDialogProps } from 'office-ui-fabric-react/lib/Dialog';
+import {  Panel, IPanelProps } from 'office-ui-fabric-react/lib/Panel';
 import * as React from 'react';
 
 
-export class DialogWrapper extends React.Component
+export class PanelWrapper extends React.Component
 {
 
   inneridReact:number;
-  state:IDialogProps;
+  state:IPanelProps;
   aureliaHost:any;
 
   constructor(props:any)
   {
     super(props);
-    console.log("DialogWrapper ctor");
+    console.log("PanelWrapper ctor");
     // console.log(this);
     // console.log(props);
     this.state = props;
@@ -26,7 +26,7 @@ export class DialogWrapper extends React.Component
     {
       this.aureliaHost.reactComponentWillUnmount();
     }
-    console.log("DialogWrapper componentWillUnmount");
+    console.log("PanelWrapper componentWillUnmount");
   }
 
   componentDidMount()
@@ -35,31 +35,32 @@ export class DialogWrapper extends React.Component
     {
       this.aureliaHost.reactComponentDidMount();
     }
-    console.log("DialogWrapper componentDidMount");
+    console.log("PanelWrapper componentDidMount");
   }
 
   render()
   {
-    console.log("DialogWrapper render");
+    console.log("PanelWrapper render");
+    console.log(this);
 
-    if(this.state.hidden == true)
+    if(this.state.isOpen == false)
     {
       return null;
     }    
 
-    let com = React.createElement(Dialog,this.state , 
+    let com = React.createElement(Panel,this.state , 
     React.createElement("span",
     {
       id:this.inneridReact,
       ref:(newParent:HTMLElement)=>
       {
-        console.log("DialogWrapper span ref callback");
+        console.log("PanelWrapper span ref callback");
         if(newParent == null)
         {
           return;
         }
 
-        if(this.state.hidden == true)
+        if(this.state.isOpen == false)
         {
           return;
         }
@@ -79,7 +80,7 @@ export class DialogWrapper extends React.Component
     }      
     )
       );
-    console.log("DialogWrapper render complete");
+    console.log("PanelWrapper render complete");
     return com;
   }
 }

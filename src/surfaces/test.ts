@@ -1,12 +1,12 @@
 import { DialogType, IDialogProps } from "office-ui-fabric-react/lib/Dialog";
-import { DuDialog2 } from "./DuDialog2";
+import { IPanelProps,PanelType } from 'office-ui-fabric-react/lib/Panel';
+//import { DuDialog2 } from "./DuDialog2";
 
 export class test {
-  hidden: boolean = false;
+  hidden: boolean = true;
 
-  test2if: boolean = false;
   counter: number = 0;
-  mytest2: DuDialog2;
+  //mytest2: DuDialog2;
   
 
   dialogprops:IDialogProps =
@@ -29,16 +29,32 @@ export class test {
       console.log(this);
       console.log(that);
     
+      this.dialogprops.dialogContentProps.title += "!";
       // WWWWWWWWOOOOOOOOOOORRRRRRRRRKKKKKKKKKKKK    HEEEEREEEE
-      // För många anrop nedan, borde kanske bli ett eller 2
-      //.test2if = false;
-      //this.mytest2.hidden = false;
-      this.mytest2.setHidden(true,false);
+      // Alla nedan funkar. Vilken vill vi ha?
+      
+      //this.mytest2.hidden = true;
+      //this.mytest2.setHidden(true,false);
+      this.hidden = true;
 
     },
-    hidden:false
+    hidden:this.hidden
     
   }
+
+  panelprops:IPanelProps=
+  {
+    isOpen : true,
+    type : PanelType.smallFixedFar,
+    onDismiss: ()=>
+    {
+      console.log("OLD DialogWrapper Dialog dismiss");
+      console.log(this);
+      this.hidden = true;
+
+    },
+    headerText:"Panel - Small, right-aligned, fixed, with footer"
+  };
 
 
   swapHidden()
@@ -48,7 +64,7 @@ export class test {
   }
 
   test2ifSwap() {
-    this.test2if = !this.test2if;
+    this.hidden = ! this.hidden;
   }
 
 

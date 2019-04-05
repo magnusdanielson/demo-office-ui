@@ -1,21 +1,26 @@
 <template>
     <require from="./DuDialog2"></require>
+    <require from="./DuPanel"></require>
     <require from="./test3"></require>
+    <require from="./myelement"></require>
+
+
+    <myelement if.bind="hidden"><div>Hello</div></myelement>
+    <du-panel hidden.bind="hidden" props.bind="panelprops" ><div>World</div></du-panel>
     
+
+
 
 
     hidden:${hidden}
     <br></br>
     innan test2
-    <du-dialog2 view-model.ref="mytest2"  if.bind="test2if"
-    props.bind="dialogprops" hidden.bind="hidden">
+    <!-- <du-dialog2 props.bind="dialogprops" hidden.bind="hidden">
         <test3></test3>
         <br></br>
         <button click.delegate="swapHidden()">SwapHidden</button>
-    </du-dialog2>
+    </du-dialog2> -->
     efter test2
-    <br></br>
-    test2if=${test2if}
     <br></br>
     <button click.delegate="test2ifSwap()">test2ifSwap</button>
 </template>

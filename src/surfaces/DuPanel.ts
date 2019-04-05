@@ -1,26 +1,26 @@
 import { customElement, inject, inlineView } from 'aurelia-framework';
-import { IDialogProps } from 'office-ui-fabric-react/lib/Dialog';
+import { IPanelProps } from 'office-ui-fabric-react/lib/Panel';
 import { bindable, bindingMode } from 'aurelia-framework';
-import { DuReactWrapperBaseClass } from './DuReactWrapperBaseClass';
+import { DuPanelReactWrapperBaseClass } from './DuPanelReactWrapperBaseClass';
 
 
 @inlineView('<template><div id.bind="inneridAurelia" show.bind="!hidden"><slot></slot></div></template>')
 @inject(Element)
-@customElement('du-dialog2')
-export class DuDialog2 extends DuReactWrapperBaseClass
+@customElement('du-panel')
+export class DuPanel extends DuPanelReactWrapperBaseClass
 {
   constructor(element) {
     super(element);
-    this.log.debug("DuDialog2 constructor");
+    this.log.debug("DuPanel constructor");
   }
   detached()
   {
-    this.log.debug("DuDialog2 detached");
+    this.log.debug("DuPanel detached");
   }
 
   attached()
   {
-    this.log.debug('DuDialog2 attached, inneridAurelia=' + this.inneridAurelia);
+    this.log.debug('DuPanel attached, inneridAurelia=' + this.inneridAurelia);
   }
 
   setHidden(newValue:any,previousValue:any)
@@ -53,7 +53,7 @@ export class DuDialog2 extends DuReactWrapperBaseClass
   @bindable({ defaultBindingMode: bindingMode.twoWay  ,name:"props" 
   ,attribute: "props" ,changeHandler: 'renderReact',
 }) 
-  public props:IDialogProps = {};
+  public props:IPanelProps = {};
 
   @bindable({ defaultBindingMode: bindingMode.twoWay  ,name:"hidden" 
   ,attribute: "hidden" ,changeHandler: 'setHidden',
@@ -61,7 +61,7 @@ export class DuDialog2 extends DuReactWrapperBaseClass
   public hidden:boolean = false;
 
   public bind(bindingContext) {
-    this.log.debug('DuDialog2 bind');
+    this.log.debug('DuPanel bind');
     if ( bindingContext !== null)
     {
         this.parent = bindingContext;

@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { LogManager } from 'aurelia-framework';
 import { Logger } from 'aurelia-logging';
-import {DialogWrapper} from './DialogWrapper';
+import {PanelWrapper} from './PanelWrapper';
 
-export class DuReactWrapperBaseClass 
+export class DuPanelReactWrapperBaseClass 
 {
   public element: HTMLElement;
   public container: HTMLElement;
@@ -20,29 +20,29 @@ export class DuReactWrapperBaseClass
   {
     
     this.element = element;
-    this.log = LogManager.getLogger('DuReactWrapperBaseClass');
+    this.log = LogManager.getLogger('DuPanelReactWrapperBaseClass');
     this.log.info("ReactWrapper2 constructor");
   }
 
   public unbind() {
-    this.log.debug("DuReactWrapperBaseClass unbind ")
+    this.log.debug("DuPanelReactWrapperBaseClass unbind ")
     ReactDom.unmountComponentAtNode(this.element);
   
   }
 
   reactComponentWillUnmount()
   {
-    this.log.debug("DuReactWrapperBaseClass componentWillUnmount");
+    this.log.debug("DuPanelReactWrapperBaseClass componentWillUnmount");
   }
 
   reactComponentDidMount()
   {
-    this.log.debug("DuReactWrapperBaseClass reactComponentDidMount");
+    this.log.debug("DuPanelReactWrapperBaseClass reactComponentDidMount");
   }
   renderReact() 
   {
 
-    this.log.debug('DuReactWrapperBaseClass renderReact');
+    this.log.debug('DuPanelReactWrapperBaseClass renderReact');
     //console.log(this.element);
     ReactDom.unmountComponentAtNode(this.element);
 
@@ -65,15 +65,15 @@ export class DuReactWrapperBaseClass
 
     // reactElement is the DOM element;
     //@ts-ignore
-    let reactElement = React.createElement(DialogWrapper,this.props);
+    let reactElement = React.createElement(PanelWrapper,this.props);
     
     // reactComponent is THE React Component
     var reactComponent = ReactDom.render(reactElement, this.container, ()=>
     {
-      this.log.debug("DuReactWrapperBaseClass React callback render complete");
+      this.log.debug("DuPanelReactWrapperBaseClass React callback render complete");
     });
     this.reactComponent = reactComponent;
     
-    this.log.debug('DuReactWrapperBaseClass renderReact complete');
+    this.log.debug('DuPanelReactWrapperBaseClass renderReact complete');
   }
 }
