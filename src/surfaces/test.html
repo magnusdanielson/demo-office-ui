@@ -1,17 +1,22 @@
 <template>
-    <require from="./DuDialog2"></require>
+    <require from="./DuDialog3"></require>
     <require from="./DuPanel"></require>
     <require from="./test3"></require>
     <require from="./myelement"></require>
 
 
     <myelement if.bind="hidden"><div>Hello</div></myelement>
-    <du-panel hidden.bind="hidden" props.bind="panelprops" ><div>World</div></du-panel>
+    <du-panel hidden.bind="!isOpen" is-open.bind="isOpen" 
+    on-dismiss.bind="panelprops.onDismiss" type.bind="panelprops.type" 
+    header-text.bind="panelprops.headerText" ><div>World</div><test3></test3></du-panel>
     
 
 
+    <du-dialog3 on-dismiss.bind="dialogprops.onDismiss" modal-props.bind="dialogprops.modalProps" dialog-content-props.bind="dialogprops.dialogContentProps" hidden.bind="hidden"
+    ><div>Hello</div><test3></test3></du-dialog3>
 
-
+    isOpen:${isOpen}
+    <br></br>
     hidden:${hidden}
     <br></br>
     innan test2
@@ -22,5 +27,6 @@
     </du-dialog2> -->
     efter test2
     <br></br>
-    <button click.delegate="test2ifSwap()">test2ifSwap</button>
+    <button click.delegate="isOpenSwap()">isOpenSwap</button>
+    <button click.delegate="swapHidden()">swapHidden</button>
 </template>
