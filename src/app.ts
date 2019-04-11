@@ -20,7 +20,7 @@ export class App {
 
   }
 
-  
+
 
   public groups = [
     {
@@ -186,24 +186,20 @@ export class App {
               key: 'callout'
             },
             {
-              name: 'Spinner',
-              url: '#spinner',
-              key: 'spinner'
+              name: 'Dialog',
+              url: '#dialog',
+              key: 'dialog'
             },
             {
               name: 'DocumentCard',
               url: '#documentcard',
               key: 'documentcard'
             },
+            
             {
-              name: 'Dialog',
-              url: '#dialog',
-              key: 'dialog'
-            },
-            {
-              name: 'Test',
-              url: '#test',
-              key: 'test'
+              name: 'Panel',
+              url: '#panel',
+              key: 'panel'
             }
           ],
           isExpanded: false
@@ -221,7 +217,7 @@ export class App {
     config.map([
       { route: ['','/gettingstarted'],  moduleId: PLATFORM.moduleName('./gettingstarted'), name:'gettingstarted', nav: true,   title: 'Getting started' },
       { route: '/why',  moduleId: PLATFORM.moduleName('./why'), name:'why', nav: true,   title: 'Why' },
-      
+
       // Basic Inputs
       { route: '/buttons',  moduleId: PLATFORM.moduleName('./buttons'), name:'buttons', nav: true,   title: 'Buttons' },
       { route: '/checkbox',  moduleId: PLATFORM.moduleName('./checkbox'), name:'checkbox', nav: true,   title: 'Checkbox' },
@@ -259,9 +255,9 @@ export class App {
       { route: '/callout',  moduleId: PLATFORM.moduleName('./surfaces/callout'), name:'callout', nav: true,   title: 'Callout' },
       { route: '/documentcard',  moduleId: PLATFORM.moduleName('./surfaces/documentcard'), name:'documentcard', nav: true,   title: 'Documentcard' },
       { route: '/dialog',  moduleId: PLATFORM.moduleName('./surfaces/dialog'), name:'dialog', nav: true,   title: 'Dialog' },
-      { route: '/test',  moduleId: PLATFORM.moduleName('./surfaces/test'), name:'test', nav: true,   title: 'Test' },
-      { route: '/jesper',  moduleId: PLATFORM.moduleName('./surfaces/jesper'), name:'jesper', nav: true,   title: 'jesper' }
-      
+      { route: '/panel',  moduleId: PLATFORM.moduleName('./surfaces/panel'), name:'panel', nav: true,   title: 'Panel' },
+      { route: '/hovercard',  moduleId: PLATFORM.moduleName('./surfaces/hovercard'), name:'hovercard', nav: true,   title: 'HoverCard' }
+
 
       ]);
 

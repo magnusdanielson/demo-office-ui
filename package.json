@@ -1,10 +1,10 @@
 {
-  "name": "removeau",
-  "description": "An Aurelia client application.",
-  "version": "0.1.0",
+  "name": "demo-au-office-ui",
+  "description": "A demo site for the au-office-ui components for Aurelia.",
+  "version": "1.0.0",
   "repository": {
-    "type": "???",
-    "url": "???"
+    "type": "git",
+    "url": "https://github.com/magnusdanielson/demo-office-ui"
   },
   "license": "MIT",
   "dependencies": {

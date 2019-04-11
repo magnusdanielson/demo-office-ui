@@ -1,60 +1,73 @@
-import { DialogType } from 'office-ui-fabric-react/lib/Dialog';
+import { DialogType,IDialogProps } from 'office-ui-fabric-react/lib/Dialog';
+import { IPanelProps, PanelType } from 'office-ui-fabric-react/lib/Panel';
 
 export class dialog
 {
-    hidden:boolean = false;
+    hidden:boolean = true;
+    isOpen:boolean = false;
 
-    onDismiss()
+    dialogprops:IDialogProps =
+  {
+    dialogContentProps : {
+      type: DialogType.normal,
+      title: 'A Title!',
+      subText: 'Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.'
+    },
+    modalProps : {
+      titleAriaId: 'myLabelId',
+      subtitleAriaId: 'mySubTextId',
+      isBlocking: false,
+      containerClassName: 'ms-dialogMainOverride',
+      className : "magnus"
+    },
+    onDismiss : (that:any)=>
     {
-        console.log("ondismiss");
-        console.log(this);
-        window['mydialog']=this;
-        this.hidden = ! this.hidden;
-        
-        
-    }
-    dialogContentProps:any;
-    modalProps:any;
-    mydialog:any;
+      console.log("OLD DialogWrapper Dialog dismiss");
+      console.log(this);
+      console.log(that);
+    
+      this.dialogprops.dialogContentProps.title += "!";
+      // WWWWWWWWOOOOOOOOOOORRRRRRRRRKKKKKKKKKKKK    HEEEEREEEE
+      // Alla nedan funkar. Vilken vill vi ha?
+      
+      //this.mytest2.hidden = true;
+      //this.mytest2.setHidden(true,false);
+      this.hidden = true;
+
+    },
+    hidden:this.hidden
+    
+  }
+
+  panelprops:IPanelProps =
+  {
+    isOpen : this.isOpen,
+    type : PanelType.smallFixedFar,
+    onDismiss: ()=>
+    {
+      console.log("test Panel dismiss");
+      console.log(this);
+      this.isOpen = false;
+
+    },
+    headerText:"Panel - Small, right-aligned, fixed, with footer"
+  };
+
+  closeDialog()
+  {
+
+  }
 
     actionButtonClick()
     {
         console.log("sdsd");
         //@ts-ignore
         this.parent.hidden = ! this.parent.hidden;
-        //@ts-ignore
-        console.log(this.parent);
-        //@ts-ignore
-        this.parent.dialogContentProps = {
-            type: DialogType.normal,
-            //@ts-ignore
-            title: this.parent.dialogContentProps +'!',
-            subText: 'Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.'
-          };
-        
-        this.modalProps = {
-            titleAriaId: 'myLabelId',
-            subtitleAriaId: 'mySubTextId',
-            isBlocking: false,
-            containerClassName: 'ms-dialogMainOverride'
-          }
+
     }
     constructor()
     {
-        this.dialogContentProps = {
-            type: DialogType.normal,
-            title: 'All emails together',
-            subText: 'Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.'
-          };
-        
-        this.modalProps = {
-            titleAriaId: 'myLabelId',
-            subtitleAriaId: 'mySubTextId',
-            isBlocking: false,
-            containerClassName: 'ms-dialogMainOverride'
-          }
 
-          
     }
 
 }

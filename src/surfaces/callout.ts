@@ -1,42 +1,41 @@
 export class callout
 {
-  isCalloutVisible:boolean = false;
-  isCalloutVisible2:boolean = false;
+  isCalloutHidden:boolean = true;
+  isCalloutHidden2:boolean = false;
   menuButtonElement:Element;
   menuButtonElement2:Element;
 
+  calloutEl:any;
   _onShowMenuClicked()
   {
     //@ts-ignore
-    this.parent.isCalloutVisible = !this.parent.isCalloutVisible;
+    this.parent.isCalloutHidden = !this.parent.isCalloutHidden;
   }
   
   _onShowMenuClicked2()
   {
-    
-    this.menuButtonElement2 = document.getElementById('menuButtonElement2');
     //@ts-ignore
-    this.parent.isCalloutVisible2 = !this.parent.isCalloutVisible2;
-    
+    this.parent.isCalloutHidden2 = !this.parent.isCalloutHidden2;
+   
   }
 
   _onCalloutDismiss()
   {
     console.log("_onCalloutDismiss");
     //@ts-ignore
-    this.parent.isCalloutVisible = false;
+    this.parent.isCalloutHidden = false;
   }
 
   _onCalloutDismiss2()
   {
     console.log("_onCalloutDismiss2");
-    this.menuButtonElement2 = null;
     //@ts-ignore
-    this.parent.isCalloutVisible2 = false;
+    this.parent.isCalloutHidden2 = false;
   }
   attached()
   {
     this.menuButtonElement = document.getElementById('menuButtonElement');
+    this.menuButtonElement2 = document.getElementById('menuButtonElement2');
     
     
   }

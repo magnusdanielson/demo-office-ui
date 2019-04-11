@@ -17,23 +17,25 @@
     <div class="PageSection">
       
         
-          <examplecard title="Default DatePicker">
+          <examplecard title="Default Dialog">
                   <div slot="code">
                     <hljs language="html" linenumbers="true">
                         
                     </hljs>
                   </div>
                   <div slot="example">
-                      <div id="dialoghere"></div>
-                      <du-dialog ref.bind="mydialog" hidden.one-time="hidden" on-dismiss.bind="onDismiss" 
-                      dialog-content-props.one-time="dialogContentProps"
-                      modal-props.bind="modalProps"><du-dialog-footer>Myfooter</du-dialog-footer></du-dialog>
-
+                      <du-dialog on-dismiss.bind="dialogprops.onDismiss" modal-props.bind="dialogprops.modalProps" dialog-content-props.bind="dialogprops.dialogContentProps" hidden.bind="hidden">
+                         
+                              <du-default-button primary="true" on-click.bind="dialogprops.onDismiss" text="Save" ></du-default-button>
+                          
+                      </du-dialog>
                       <du-default-button text="Show Dialog"
                         on-click.bind="actionButtonClick"></du-default-button>
                   </div>
                 </examplecard>
   
+                
+                        
     </div>
   </template>
   
