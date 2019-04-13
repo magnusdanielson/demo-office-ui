@@ -195,7 +195,6 @@ export class App {
               url: '#documentcard',
               key: 'documentcard'
             },
-            
             {
               name: 'Panel',
               url: '#panel',

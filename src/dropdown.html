@@ -66,9 +66,7 @@
                           label="Multi-Select uncontrolled example:"
                           default-selected-keys.one-time="['Apple', 'Banana', 'Orange']"
                           multi-select.one-time="true"
-                          options.one-time="fruits" required.one-time="true"></du-dropdown> 
-                            
-                        </div>
+                          options.bind="fruits" required.one-time="true"></du-dropdown> 
                       </examplecard>
 
 
@@ -81,10 +79,10 @@
                             
                             <du-dropdown placeholder="Select an Option" 
                             selected-key.bind="selectedItem"
-                            label="Dropdown, controlled no-banana, with error message" 
+                            label="Dropdown, controlled no-banana, with error message for anything but English" 
                             id="dropDefaultKey" 
                             options.one-time="fruits" 
-                            on-changed.bind="onChange"
+                            on-change.bind="onChange"
                             on-blur.bind="onBlur"
                             on-focus.bind="onFocus"
                             error-message="An error"

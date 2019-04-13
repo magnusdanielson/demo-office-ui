@@ -57,7 +57,9 @@
                       </hljs>
                     </div>
                     <div slot="example">
-                        <du-text-field label="Standard" ></du-text-field>
+                      name: ${name} <br/>
+                        <input value.bind="name"></input>
+                        <du-text-field value.bind="name" label="Standard bound to {name}" ></du-text-field>
                         <du-text-field label="Disabled" disabled="true" ></du-text-field>
                         <du-text-field label="Read Only" read-only="true" ></du-text-field>
                         <du-text-field label="Required" required="true" ></du-text-field>

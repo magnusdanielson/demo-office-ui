@@ -2,6 +2,7 @@ import { SelectableOptionMenuItemType } from 'office-ui-fabric-react/lib/utiliti
 
 export class choicegroup
 {
+
     private testOptions = [
       { key: 'Header', text: 'Theme Fonts', itemType: SelectableOptionMenuItemType.Header },
       { key: 'A', text: 'Arial Black' },
@@ -18,12 +19,13 @@ export class choicegroup
       { key: 'J', text: 'Option j', disabled: true }
     ];
 
-    public onChangeMulti = (args: any[]) => {
-      console.log("changed value");
+    public onChange(args: any[]){
+      console.log("onChange value");
       console.log(args[0]);
       console.log("index");
       console.log(args[1]);
     };
+
 
     public onFocus()
     {

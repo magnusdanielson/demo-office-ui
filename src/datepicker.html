@@ -22,8 +22,9 @@
                   </hljs>
                 </div>
                 <div slot="example">
-                    <du-date-picker placeholder="Select a date" show-week-numbers="true" ></du-date-picker>
-                </div>
+                    <du-date-picker on-select-date.bind="selected" placeholder="Select a date" show-week-numbers="true" ></du-date-picker>
+                    !${mydate}!
+                  </div>
               </examplecard>
 
               <examplecard title="No month picker in DatePicker">

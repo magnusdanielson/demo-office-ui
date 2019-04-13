@@ -107,13 +107,16 @@
                       label="Basic controlled example (allowFreeform: true, AutoComplete: on):"
                       allow-freeform="true"
                       auto-complete="on"
-                      options.one-time="testOptions"
+                      options.bind="testOptions"
                       on-menu-open.bind="menuOpen"
                       on-menu-dismissed.bind="dismissed"
-                      on-changed.bind="onChangeMulti"
                       on-focus.bind="onFocus"
                       on-blur.bind="onBlur"
-                      ></du-combo-box> 
+                      on-change.bind="onChange"
+                      ></du-combo-box>
+                      <ul>
+                        <li repeat.for="opt of testOptions">${opt.key}|${opt.selected}</li>
+                      </ul>
                     </div>
                   </examplecard>
   </div>

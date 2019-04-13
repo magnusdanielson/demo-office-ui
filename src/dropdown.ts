@@ -4,6 +4,8 @@ export class dropdown
 {
     
 
+  me:any;
+
     public simpleOptions:any =
     [
       { key: 'Header', text: 'Actions', itemType: DropdownMenuItemType.Header },
@@ -41,11 +43,9 @@ export class dropdown
       public onChange(args):void
       {
         console.log("The option has been changed to Object:");
-        console.log(args[0]);
-        console.log("Index:");
         console.log(args[1]);
 
-        if(args[0].key != 'English')
+        if(args[1].key != 'English')
         {
           //@ts-ignore
           this.errorMessage = "An error";
@@ -57,10 +57,10 @@ export class dropdown
           this.errorMessage = "";
 
         }
-        if(args[0].key != 'Banana')
+        if(args[1].key != 'Banana')
         {
           //@ts-ignore
-          this.parent.selectedItem = args[0].key;
+          this.parent.selectedItem = args[1].key;
         }
         else
         {

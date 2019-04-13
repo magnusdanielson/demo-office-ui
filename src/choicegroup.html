@@ -17,7 +17,7 @@
   <div class="PageSection">
         
 
-              <examplecard title="ChoiceGroups">
+              <examplecard title="ChoiceGroups bound with default onchange event">
                     <div slot="code">
                       <hljs language="html" linenumbers="true">
   &#x3C;du-choice-group defaultSelectedKey=&#x22;B&#x22; options.one-time=&#x22;[
@@ -44,8 +44,9 @@
                       </hljs>
                     </div>
                     <div slot="example">
-                        
-                      <du-choice-group defaultSelectedKey="B" options.one-time="[
+                        Key:${myvalue.key}<br/>
+                        Value:${myvalue.text}<br/>
+                      <du-choice-group defaultSelectedKey="B" value.bind="myvalue" options.one-time="[
                       {
                         key: 'A',
                         text: 'Option A',
@@ -65,7 +66,7 @@
                         text: 'Option D',
                         disabled: true
                       }
-                    ]" on-change.bind="onChange" label="Pick one"></du-choice-group> 
+                    ]"  label="Pick one"></du-choice-group> 
                         
                     </div>
                   </examplecard>
@@ -134,7 +135,7 @@
                         </div>
                         <div slot="example">
                             
-                          <du-choice-group default-selected-key="week" options.one-time="optionsIcon" on-change.bind="onChange" label="Pick one"></du-choice-group> 
+                          <du-choice-group default-selected-key="week" value.bind="myvalue" options.one-time="optionsIcon" on-change.bind="onChange" label="Pick one"></du-choice-group> 
                             
                         </div>
                       </examplecard>

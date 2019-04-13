@@ -74,5 +74,5 @@
     "id": "jasmine",
     "displayName": "Jasmine"
   },
-  "packageManager": "yarn"
+  "packageManager": "npm"
 }

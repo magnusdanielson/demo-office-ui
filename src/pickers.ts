@@ -46,7 +46,12 @@ export class pickers
 
     public onChange(args:any[])
     {
+        //@ts-ignore
+        this.parent.selectedItems = args[0];
         this.selectedItems = args[0];
+        console.log("HHHHOOOO");
+        //@ts-ignore
+        console.log(this.parent.selectedItems);
     }
 
     private listContainsDocument(tag: ITag, tagList?: ITag[]) 

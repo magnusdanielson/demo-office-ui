@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@dunite/au-office-ui": "^1.1.5",
+    "@dunite/au-office-ui": "^1.1.8",
     "@types/bluebird": "3.5.20",
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.3.0",

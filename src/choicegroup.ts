@@ -1,6 +1,6 @@
 export class choicegroup
 {
-    
+  myvalue:any;
     onChange( args: any[])
     {
       console.log("Event");

@@ -2,6 +2,14 @@ import { addMonths, addYears } from 'office-ui-fabric-react/lib/utilities/dateMa
 
 export class datepicker
 {
+  mydate:any;
+
+  selected(args:any[])
+  {
+    console.log(args);
+    //@ts-ignore
+    this.parent.mydate = args[0];
+  }
     onFormatDate = (date: Date): string => {
         return date.getDate() + '/' + (date.getMonth() + 1) + '/' + (date.getFullYear() % 100);
       };

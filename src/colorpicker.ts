@@ -8,4 +8,9 @@ export class colorpicker
         //@ts-ignore
         this.parent.thecolor = newValue;
     }
+
+    onChange(args:any[])
+    {
+        console.log(args);
+    }
 }

@@ -10,7 +10,7 @@
   <div
     class="content"
     style="bottom: unset; top: 0px; background-color: rgb(3, 131, 135);">
-    <h1 class="pageTitle">Picker</h1>
+    <h1 class="pageTitle">Pickers</h1>
     <div
       role="presentation"
       class="ms-FocusZone"
@@ -149,9 +149,15 @@
           }"
           item-limit="8"
           input-props.bind="inputProps"></du-tag-picker>
-                </div>  
+          <ul>
+              <li repeat.for="item of selectedItems">${item.key}</li>
+            </ul>
+                </div>
+
+                
+                
           </examplecard>
 
-
+          
   </div>
 </template>

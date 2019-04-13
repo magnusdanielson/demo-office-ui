@@ -1,6 +1,12 @@
 export class textfield
 {
 
+    name:string;
+    
+    onchange()
+    {
+        console.log("h");
+    }
     getErrorMessage(args:any[])
     {
         let value = args[0];
