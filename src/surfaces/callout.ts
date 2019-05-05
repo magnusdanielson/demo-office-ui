@@ -1,4 +1,4 @@
-import {DuCallout} from '@dunite/au-office-ui/dist/commonjs/resources/elements/Surfaces/DuCallout'
+import {DuCallout} from '@dunite/au-office-ui'
 
 export class callout
 {

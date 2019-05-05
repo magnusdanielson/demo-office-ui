@@ -3,7 +3,7 @@ import { Logger } from "aurelia-logging";
 import {Router, RouterConfiguration} from 'aurelia-router';
 import { PLATFORM } from "aurelia-framework";
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
-import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
+import {IAuReactWrapper} from '@dunite/au-react-wrapper'
 
 initializeIcons(/* optional base url */);
 
@@ -13,7 +13,7 @@ export class App {
   message = 'Hello World!';
   showBurgerMenu = true;
 
-  toggleMenu(this:IDuReactWrapper, args:any[])
+  toggleMenu(this:IAuReactWrapper, args:any[])
   {
     console.log(args);
     this.parent.showBurgerMenu = ! this.parent.showBurgerMenu;

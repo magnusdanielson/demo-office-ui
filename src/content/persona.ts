@@ -4,7 +4,7 @@ import { TestImages } from "testimages";
 export class persona
 {
     personaSize = PersonaSize.large;
-    imageUrl =  TestImages.personaFemale;
+    imageUrl =  TestImages.personaMale;
     personaPresence = PersonaPresence.busy;
       
 }

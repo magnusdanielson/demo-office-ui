@@ -21,7 +21,6 @@ reactprops.onNotifyValidationResult = onlyAureliaBound;
 reactprops.onGetErrorMessage = <any>onlyAureliaBound;
 reactprops.borderless = <any>{};
 reactprops.autoComplete = <any>{};
-reactprops.label = <any>{};
 reactprops.value = <any>{};
 reactprops.description = <any>{};
 reactprops.prefix = <any>{};

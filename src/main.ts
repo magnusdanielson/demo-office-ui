@@ -12,7 +12,6 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature(PLATFORM.moduleName('resources/index'))
-    .plugin(PLATFORM.moduleName('aurelia-portal-attribute'))
     .plugin(PLATFORM.moduleName("@dunite/au-office-ui"))
     .globalResources(
       [ // Registrera alla komponenter som denna webpart använder här
@@ -44,8 +43,7 @@ export function configure(aurelia: Aurelia) {
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuCommandBar'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuNav'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuPivot'),
-        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuPivotItem'),
-        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuSearch'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuSearchBox'),
         
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuColorPicker'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuCompactPeoplePicker'),

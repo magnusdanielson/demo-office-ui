@@ -1,5 +1,5 @@
 import {DropdownMenuItemType, IDropdownProps} from 'office-ui-fabric-react/lib/Dropdown'
-import {DuDropdown} from '@dunite/au-office-ui/dist/commonjs/resources/elements/BasicInputs/DuDropdown'
+import {DuDropdown} from '@dunite/au-office-ui'
 export class dropdown
 {
     

@@ -1,5 +1,5 @@
 import { ITextFieldProps } from "office-ui-fabric-react/lib/TextField";
-import {DuTextField} from '@dunite/au-office-ui/dist/commonjs/resources/elements/BasicInputs/DuTextField'
+import {DuTextField} from '@dunite/au-office-ui'
 
 export class textfield
 {

@@ -1,5 +1,5 @@
 import { ITag, IBasePickerProps } from 'office-ui-fabric-react/lib/Pickers';
-import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
+import {IAuReactWrapper} from '@dunite/au-react-wrapper';
 
 
 const _testTags: ITag[] = [
@@ -31,7 +31,7 @@ export class pickers
         'aria-label': 'Tag Picker'
       };
 
-    public onFilterChanged(this:IDuReactWrapper, args:any[]): ITag[] 
+    public onFilterChanged(this:IAuReactWrapper, args:any[]): ITag[] 
     {
         let filterText: string = args[0];
         let tagList: ITag[] = args[1];
@@ -45,7 +45,7 @@ export class pickers
         return retValue;
     }
 
-    public onChange(this:IDuReactWrapper & IBasePickerProps<ITag>, args:any[])
+    public onChange(this:IAuReactWrapper & IBasePickerProps<ITag>, args:any[])
     {
         this.selectedItems = args[0];
         console.log(this.parent.selectedItems);

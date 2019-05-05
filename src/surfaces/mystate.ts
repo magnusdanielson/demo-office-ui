@@ -8,7 +8,7 @@ export class mystate extends React.Component {
 
     constructor(props: any) {
         super(props);
-        this.state = props;
+        this.state = {...props};
         this.inneridReact = Date.now();
         this.aureliaHost = props.aureliaHost;
         this.reactClass = props.reactClass;

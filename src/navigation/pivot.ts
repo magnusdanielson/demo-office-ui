@@ -1,5 +1,5 @@
 import { PivotLinkSize, PivotLinkFormat } from 'office-ui-fabric-react/lib/Pivot'
-import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
+import {IAuReactWrapper} from '@dunite/au-react-wrapper'
 
 export class pivot
 {
@@ -23,7 +23,7 @@ export class pivot
 
     public selectedTab = "k1";
 
-    onLinkClick(this:IDuReactWrapper, args: any[]): void 
+    onLinkClick(this:IAuReactWrapper, args: any[]): void 
     {
         console.log(this);
         var item  = args[0];

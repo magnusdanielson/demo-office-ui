@@ -3,7 +3,7 @@ import { IPersonaProps } from 'office-ui-fabric-react/lib/Persona';
 import { people, mru } from './PeoplePickerExampleData';
 import { IBasePickerSuggestionsProps, ValidationState } from 'office-ui-fabric-react/lib/Pickers';
 import { assign } from 'office-ui-fabric-react/lib/Utilities';
-import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
+import {IAuReactWrapper} from '@dunite/au-react-wrapper';
 
 
 export class peoplepickers
@@ -12,25 +12,25 @@ export class peoplepickers
     state:any;
 
     public selectedItemsNormal: any[] = [];
-    public onChangeNormal(this:IDuReactWrapper, args:any[])
+    public onChangeNormal(this:IAuReactWrapper, args:any[])
     {
         this.parent.selectedItemsNormal = args[0];
     }
 
     public selectedItemsCompact: any[] = [];
-    public onChangeCompact(this:IDuReactWrapper,args:any[])
+    public onChangeCompact(this:IAuReactWrapper,args:any[])
     {
         this.parent.selectedItemsCompact = args[0];
     }
 
     public selectedItemsList: any[] = [];
-    public onChangeList(this:IDuReactWrapper,args:any[])
+    public onChangeList(this:IAuReactWrapper,args:any[])
     {
         this.parent.selectedItemsList = args[0];
     }
 
     public selectedItemsLimited: any[] = [];
-    public onChangeLimited(this:IDuReactWrapper, args:any[])
+    public onChangeLimited(this:IAuReactWrapper, args:any[])
     {
         this.parent.selectedItemsLimited = args[0];
     }
@@ -82,7 +82,7 @@ export class peoplepickers
     }
 
     // OK
-    private _returnMostRecentlyUsed(this:IDuReactWrapper,args:any[]): IPersonaProps[] | Promise<IPersonaProps[]>
+    private _returnMostRecentlyUsed(this:IAuReactWrapper,args:any[]): IPersonaProps[] | Promise<IPersonaProps[]>
     {
         let currentPersonas: IPersonaProps[] = args[0];
         let { mostRecentlyUsed } = this.parent.state;
@@ -90,7 +90,7 @@ export class peoplepickers
         return this.parent._filterPromise(mostRecentlyUsed);
     }
 
-    private _returnMostRecentlyUsedWithLimit(this:IDuReactWrapper, args:any[]): IPersonaProps[] | Promise<IPersonaProps[]>
+    private _returnMostRecentlyUsedWithLimit(this:IAuReactWrapper, args:any[]): IPersonaProps[] | Promise<IPersonaProps[]>
     {
         let currentPersonas: IPersonaProps[] = args[0];
         console.log("_returnMostRecentlyUsedWithLimit")
@@ -166,7 +166,7 @@ export class peoplepickers
         }
       };
 
-      private _onFilterChangedWithLimit(this:IDuReactWrapper, args:any[]) : IPersonaProps[] | Promise<IPersonaProps[]>
+      private _onFilterChangedWithLimit(this:IAuReactWrapper, args:any[]) : IPersonaProps[] | Promise<IPersonaProps[]>
       {
         let filterText: string = args[0];
         let currentPersonas: IPersonaProps[] = args[1];
@@ -188,7 +188,7 @@ export class peoplepickers
       };
 
       // OK
-      private _onFilterChanged(this:IDuReactWrapper, args:any[]): IPersonaProps[] | Promise<IPersonaProps[]> 
+      private _onFilterChanged(this:IAuReactWrapper, args:any[]): IPersonaProps[] | Promise<IPersonaProps[]> 
       {
         let filterText: string = args[0];
         let currentPersonas: IPersonaProps[] = args[1];

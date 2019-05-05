@@ -1,4 +1,4 @@
-import {DuSearchBox} from '@dunite/au-office-ui/dist/commonjs/resources/elements/Navigation/DuSearchBox'
+import {DuSearchBox} from '@dunite/au-office-ui'
 import { ISearchBoxProps } from 'office-ui-fabric-react/lib/SearchBox';
 export class search
 {

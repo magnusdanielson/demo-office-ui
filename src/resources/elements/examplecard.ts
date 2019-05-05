@@ -1,5 +1,5 @@
 import { bindable } from "aurelia-framework";
-import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
+import {IAuReactWrapper} from '@dunite/au-react-wrapper';
 
 export class examplecard
 {
@@ -7,7 +7,7 @@ export class examplecard
     @bindable()
     public title:string;
 
-    toggleCode(this:IDuReactWrapper)
+    toggleCode(this:IAuReactWrapper)
     {
         this.parent.showCode = ! this.parent.showCode; 
     }

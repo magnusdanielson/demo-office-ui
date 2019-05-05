@@ -1,5 +1,5 @@
 import { DialogType,IDialogProps } from 'office-ui-fabric-react/lib/Dialog';
-import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
+import {IAuReactWrapper} from '@dunite/au-react-wrapper';
 
 
 export class dialog
@@ -29,7 +29,7 @@ export class dialog
       hidden:this.hidden
     }
 
-    actionButtonClick(this:IDuReactWrapper)
+    actionButtonClick(this:IAuReactWrapper)
     {
         this.parent.hidden = ! this.parent.hidden;
     }
