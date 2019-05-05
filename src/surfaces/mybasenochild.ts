@@ -6,6 +6,11 @@ import { mystatenochild } from './mystatenochild';
 // Den här filen har endast "ReactStateWrapper" som unik referens
 export class mybasenochild extends mybase
 {
+  constructor(element) 
+  {
+    super(element);
+  }
+
   renderReact(reactClass: any, a: any) 
   {
     ReactDom.unmountComponentAtNode(this.element);

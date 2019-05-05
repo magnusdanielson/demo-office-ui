@@ -37,27 +37,36 @@ export class mystate extends React.Component {
             React.createElement('span', {
                 id: this.inneridReact,
                 ref: (newParent: HTMLElement | null) => {
+                    console.log('test');
                     if (newParent == null) 
                     {
+                    console.log("1");
                       newParent = document.getElementById(this.inneridReact.toString());
                       if (newParent == null)
                       {
+                        console.log("2");
                         return;
                       }
                     }
 
+                    console.log("3");
                     if (this.aureliaHost.isHidden()) {
+                        console.log("4");
                         return;
                     }
 
+                    console.log("5");
+                    console.log(this.aureliaHost.inneridAurelia);
                     let auelement = document.getElementById(
                         this.aureliaHost.inneridAurelia
                     );
 
                     if (auelement == null) {
+                        console.log("6");
                         return;
                     }
 
+                    console.log("7");
                     while (auelement.childNodes.length > 0) {
                         newParent.appendChild(auelement.childNodes[0]);
                     }

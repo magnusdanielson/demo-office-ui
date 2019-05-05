@@ -1,3 +1,5 @@
+import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
+
 export class hovercard
 {
     hidden:boolean = true;
@@ -8,12 +10,9 @@ export class hovercard
     //     renderData: item
     //   };
 
-    actionButtonClick()
+    actionButtonClick(this:IDuReactWrapper)
     {
-        console.log("sdsd");
-        //@ts-ignore
         this.parent.hidden = ! this.parent.hidden;
-
     }
 
 }

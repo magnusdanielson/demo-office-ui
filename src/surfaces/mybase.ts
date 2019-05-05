@@ -65,8 +65,7 @@ export class mybase
 
   isHidden(): boolean
   {
-    return this.hiddenIsHidden ? this[this.hiddenName]  :  ! this[this.hiddenName] ;
-
+    return this.hiddenIsHidden ? this[this.hiddenName]  :  ! this[this.hiddenName];
   }
   constructor(element) 
   {
@@ -75,6 +74,8 @@ export class mybase
     this.log = LogManager.getLogger('DuReactWrapperBaseClass');
     // this.log.info('DuReactWrapperBaseClass constructor');
     this.inneridAurelia = 'du' + Math.round( Math.random() * 10000000000000000);
+    console.log(element);
+    console.log(this.inneridAurelia);
   }
 
   public bind(bindingContext) 

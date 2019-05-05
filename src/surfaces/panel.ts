@@ -1,4 +1,5 @@
 import { IPanelProps,PanelType } from 'office-ui-fabric-react/lib/Panel';
+import {IDuReactWrapper} from '@dunite/au-office-ui/dist/commonjs/resources/wrapper/IDuReactWrapper'
 
 export class panel {
 
@@ -20,8 +21,8 @@ export class panel {
 
 
 
-  isOpenSwap() {
-    //@ts-ignore
+  isOpenSwap(this:IDuReactWrapper) 
+  {
     this.parent.isOpen = ! this.parent.isOpen;
   }
 }

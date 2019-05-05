@@ -1,46 +1,24 @@
-import {DuCallout} from '@dunite/au-office-ui/dist/commonjs/resources/elements/Surfaces/DuCallout'
-
-export class callout
-{
-  isCalloutHidden:boolean = true;
-  isCalloutHidden2:boolean = true;
-  menuButtonElement:Element;
-  menuButtonElement2:Element;
-
-  _onShowMenuClicked(this:DuCallout)
-  {
-    this.parent.isCalloutHidden = !this.parent.isCalloutHidden;
-  }
+<template>
   
-  _onShowMenuClicked2(this:DuCallout)
-  {
-    this.parent.isCalloutHidden2 = !this.parent.isCalloutHidden2;
-  }
-
-  _onCalloutDismiss(this:DuCallout)
-  {
-    console.log("_onCalloutDismiss");
-    this.parent.isCalloutHidden = false;
-  }
-
-  _onCalloutDismiss2(this:DuCallout)
-  {
-    console.log("_onCalloutDismiss2");
-    this.parent.isCalloutHidden2 = false;
-  }
-
-  attached()
-  {
-    console.log("attached");
-    this.menuButtonElement = document.getElementById('menuButtonElement');
-    this.menuButtonElement2 = document.getElementById('menuButtonElement2');
-  }
-
-  activate()
-  {
-    console.log("activate");
-  }
-
+   
+  
+  <div
+    class="content"
+    style="bottom: unset; top: 0px; background-color: rgb(3, 131, 135);">
+    <h1 class="pageTitle">CommandBar</h1>
+    <div
+      role="presentation"
+      class="ms-FocusZone"
+      
+    ></div>
+  </div>
+  <div class="PageSection">
+        <examplecard title="CommandBar with overflowing menu items">
+          <div slot="code">
+            <hljs language="html" linenumbers="true">
+  &#x3C;du-command-bar items.one-time=&#x22;getItems()&#x22; overflow-items.one-time=&#x22;getOverflowItems()&#x22; far-items.one-time=&#x22;getFarItems()&#x22; &#x3E;&#x3C;/du-command-bar&#x3E;
+            </hljs>
+            <hljs language="javascript" linenumbers="true">
   getItems = () => {
     return [
       {
@@ -158,4 +136,12 @@ export class callout
       }
     ];
   };
-}
+            </hljs>
+          </div>
+          <div slot="example">
+              <!-- overflow-items.bind="getOverflowItems" far-items.bind="getFarItems" -->
+            <du-command-bar items.one-time="getItems()" overflow-items.one-time="getOverflowItems()" far-items.one-time="getFarItems()" ></du-command-bar>
+          </div>
+        </examplecard>
+  </div>
+</template>
