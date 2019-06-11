@@ -3,21 +3,26 @@
 import {Aurelia} from 'aurelia-framework'
 import environment from './environment';
 import {PLATFORM} from 'aurelia-pal';
-import * as Bluebird from 'bluebird';
+//import * as Bluebird from 'bluebird';
+import { CustomElementRegistry } from 'aurelia-web-components';
 
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
-Bluebird.config({ warnings: { wForgottenReturn: false } });
+//Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
-    .standardConfiguration()
-    .feature(PLATFORM.moduleName('resources/index'))
-    .plugin(PLATFORM.moduleName("@dunite/au-office-ui"))
+    // .standardConfiguration()
+    // .feature(PLATFORM.moduleName('resources/index'))
+    // .plugin(PLATFORM.moduleName("@dunite/au-office-ui"))
+    //.standardConfiguration()
+    // .developmentLogging()
+    .defaultBindingLanguage()
     .globalResources(
       [ // Registrera alla komponenter som denna webpart använder här
-        PLATFORM.moduleName('resources/elements/hljs'),
-        PLATFORM.moduleName('resources/elements/examplecard'),
-        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Utilities/DuMarqueeSelection'),
+        PLATFORM.moduleName('DuTest'),
+        // PLATFORM.moduleName('resources/elements/hljs'),
+        // PLATFORM.moduleName('resources/elements/examplecard'),
+        // PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Utilities/DuMarqueeSelection'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuActionButton'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuCheckbox'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuChoiceGroup'),
@@ -80,11 +85,19 @@ export function configure(aurelia: Aurelia) {
   // Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-html-import-template-loader'));
 
-  aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
+  // aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
 
-  if (environment.testing) {
-    aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
-  }
+  // if (environment.testing) {
+  //   aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
+  // }
 
-  return aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+  return aurelia.start()
+  //.then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+  .then(() => {
+    const registry = aurelia.container.get(CustomElementRegistry);
+
+    //The following line takes all global resource custom elements and registers them as web components.
+    //Once the element is registered, in-page elements will begin rendering.
+    registry.useGlobalElements();
+  });
 }

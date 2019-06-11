@@ -101,7 +101,6 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
     // serve index.html for all 404 (required for push-state)
     historyApiFallback: true
   },
-  devtool: production ? 'nosources-source-map' : 'cheap-module-eval-source-map',
   module: {
     rules: [
       // CSS required in JS/TS files should use the style-loader that auto-injects it into the website
@@ -151,7 +150,18 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
   },
   plugins: [
     ...when(!karma, new DuplicatePackageCheckerPlugin()),
-    new AureliaPlugin(),
+    new AureliaPlugin(
+      {
+        dist: 'es2015',
+        features: { 
+          ie: false,
+          svg: false,
+          unparser: false,
+          polyfills: "es2015"
+        },
+        aureliaConfig: ['defaultBindingLanguage']
+      }
+    ),
     new ProvidePlugin({
       'Promise': 'bluebird'
     }),

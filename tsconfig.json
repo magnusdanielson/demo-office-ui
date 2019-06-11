@@ -1,13 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "module": "esnext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "sourceRoot": "src",
-    "sourceMap": true,
+    "sourceMap": false,
     "allowJs": true,
     "baseUrl": "src",
     "skipLibCheck": true,
