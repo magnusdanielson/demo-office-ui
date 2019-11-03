@@ -11,18 +11,19 @@ import { CustomElementRegistry } from 'aurelia-web-components';
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
-    // .standardConfiguration()
-    // .feature(PLATFORM.moduleName('resources/index'))
-    // .plugin(PLATFORM.moduleName("@dunite/au-office-ui"))
+    .standardConfiguration()
+    .feature(PLATFORM.moduleName('resources/index'))
+    .plugin(PLATFORM.moduleName("@dunite/au-office-ui"))
     //.standardConfiguration()
-    // .developmentLogging()
+    .developmentLogging()
     .defaultBindingLanguage()
     .globalResources(
       [ // Registrera alla komponenter som denna webpart använder här
-        PLATFORM.moduleName('DuTest'),
-        // PLATFORM.moduleName('resources/elements/hljs'),
-        // PLATFORM.moduleName('resources/elements/examplecard'),
-        // PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Utilities/DuMarqueeSelection'),
+        
+        // PLATFORM.moduleName('surfaces/mytext'),
+        PLATFORM.moduleName('resources/elements/hljs'),
+        PLATFORM.moduleName('resources/elements/examplecard'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Utilities/DuMarqueeSelection'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuActionButton'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuCheckbox'),
         PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuChoiceGroup'),
@@ -92,12 +93,12 @@ export function configure(aurelia: Aurelia) {
   // }
 
   return aurelia.start()
-  //.then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
-  .then(() => {
-    const registry = aurelia.container.get(CustomElementRegistry);
+  .then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+  // .then(() => {
+  //   const registry = aurelia.container.get(CustomElementRegistry);
 
-    //The following line takes all global resource custom elements and registers them as web components.
-    //Once the element is registered, in-page elements will begin rendering.
-    registry.useGlobalElements();
-  });
+  //   //The following line takes all global resource custom elements and registers them as web components.
+  //   //Once the element is registered, in-page elements will begin rendering.
+  //   registry.useGlobalElements();
+  // });
 }

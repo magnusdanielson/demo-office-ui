@@ -1,4 +1,5 @@
 import { SelectableOptionMenuItemType } from 'office-ui-fabric-react/lib/utilities/selectableOption/SelectableOption.types'
+import { IComboBoxOption } from 'office-ui-fabric-react/lib/components/ComboBox/ComboBox.types';
 
 export class combobox
 {
@@ -19,11 +20,11 @@ export class combobox
       { key: 'J', text: 'Option j', disabled: true }
     ];
 
-    public onChange(args: any[]){
-      console.log("onChange value");
-      console.log(args[0]);
-      console.log("index");
-      console.log(args[1]);
+    public onChange(event: any, option?: IComboBoxOption, index?: number, value?: string){
+      console.log(event);
+      console.log(option);
+      console.log(index);
+      console.log(value);
     };
 
 

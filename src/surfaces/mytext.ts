@@ -14,7 +14,10 @@ reactprops.multiline = <any>{};
 reactprops.className = <any>{};
 reactprops.label = <any>{};
 reactprops.resizable = <any>{};
-reactprops.onChange = (_this, newValue) => { console.log('onChange2'); console.log(_this); console.log(newValue); _this['value'] = newValue[1]; };
+reactprops.onChange = function (that:any, event: any, newValue?: string)
+{
+  that['value'] = newValue; 
+};
 reactprops.autoAdjustHeight = <any>{};
 reactprops.underlined = <any>{};
 reactprops.onNotifyValidationResult = onlyAureliaBound;

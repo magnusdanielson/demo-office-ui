@@ -1,5 +1,4 @@
 import { bindable } from "aurelia-framework";
-import {IAuReactWrapper} from '@dunite/au-react-wrapper';
 
 export class examplecard
 {
@@ -7,8 +6,9 @@ export class examplecard
     @bindable()
     public title:string;
 
-    toggleCode(this:IAuReactWrapper)
+    toggleCode()
     {
-        this.parent.showCode = ! this.parent.showCode; 
+        console.log("toggle");
+        this.showCode = ! this.showCode; 
     }
 }

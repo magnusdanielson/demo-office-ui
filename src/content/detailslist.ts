@@ -1,13 +1,13 @@
-import { Selection, IColumn } from "office-ui-fabric-react/lib/DetailsList";
+import { Selection, IColumn, IObjectWithKey } from "office-ui-fabric-react/lib/DetailsList";
+
+interface IRow extends IObjectWithKey {
+  name: string;
+  value: number;
+}
 
 export class detailslist {
-  private _selection: Selection = new Selection({
-    onSelectionChanged: () => {
-      //@ts-ignore
-      this.setState({ selectionDetails: this._getSelectionDetails() });
-    }
-  });
-  private _allItems: any[];
+  private _selection: Selection;
+  private _allItems: IRow[];
   private _columns: IColumn[];
 
   constructor() {
@@ -39,10 +39,21 @@ export class detailslist {
         isResizable: true
       }
     ];
+
+    this._selection = new Selection({
+      onSelectionChanged: () => {
+        console.log(this);
+        // if (this._isMounted) {
+        //   this.forceUpdate();
+        // }
+      }
+    });
+
+    this._selection.setItems(this._allItems);
   }
 
   private onItemInvoked = (item: any): void => {
-    alert(`Item invoked: ${item[0].name}`);
+    alert(`Item invoked: ${item.name}`);
   };
 
   private selectionDetails(): string {

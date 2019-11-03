@@ -13,10 +13,9 @@ export class App {
   message = 'Hello World!';
   showBurgerMenu = true;
 
-  toggleMenu(this:IAuReactWrapper, args:any[])
+  toggleMenu()
   {
-    console.log(args);
-    this.parent.showBurgerMenu = ! this.parent.showBurgerMenu;
+    this.showBurgerMenu = ! this.showBurgerMenu;
   }
 
 
@@ -37,6 +36,11 @@ export class App {
               name: 'Why',
               url: '#why',
               key: 'why'
+            },
+            {
+              name: 'RequireJs',
+              url: '#reqjs',
+              key: 'reqjs'
             }
           ],
           isExpanded: true
@@ -251,6 +255,8 @@ export class App {
     config.map([
       { route: ['','/gettingstarted'],  moduleId: PLATFORM.moduleName('./gettingstarted'), name:'gettingstarted', nav: true,   title: 'Getting started' },
       { route: '/why',  moduleId: PLATFORM.moduleName('./why'), name:'why', nav: true,   title: 'Why' },
+      { route: '/reqjs',  moduleId: PLATFORM.moduleName('./reqjs'), name:'reqjs', nav: true,   title: 'Require' },
+      { route: '/otherstuff',  moduleId: PLATFORM.moduleName('./otherstuff'), name:'otherstuff', nav: true,   title: 'otherstuff' },
 
       // Basic Inputs
       { route: '/buttons',  moduleId: PLATFORM.moduleName('./basicinputs/buttons'), name:'buttons', nav: true,   title: 'Buttons' },

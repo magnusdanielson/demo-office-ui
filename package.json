@@ -8,29 +8,29 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@dunite/au-office-ui": "^1.2.2",
-    "@types/bluebird": "3.5.20",
+    "@dunite/au-office-ui": "^2.0.0",
     "aurelia-animator-css": "^1.0.4",
-    "aurelia-bootstrapper": "^2.3.0",
+    "aurelia-bootstrapper": "^2.3.2",
     "aurelia-fetch-client": "^1.7.0",
     "aurelia-polyfills": "^1.3.0",
-    "aurelia-web-components": "^1.0.0-beta.1",
-    "bluebird": "^3.5.2",
+    "aurelia-web-components": "^1.0.0-beta.3",
     "highlight.js": "^9.13.1"
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@types/jest": "^23.3.5",
+    "@types/jest": "^24.0.9",
     "@types/lodash": "^4.14.117",
     "@types/node": "^10.11.6",
     "@types/webpack": "^4.4.15",
-    "aurelia-cli": "^1.0.0-beta.7",
+    "aurelia-cli": "^1.0.2",
     "aurelia-loader-nodejs": "^1.0.1",
-    "aurelia-pal-nodejs": "^1.1.1",
+    "aurelia-pal-nodejs": "^1.2.0",
     "aurelia-testing": "^1.0.0",
     "aurelia-tools": "^2.0.0",
     "aurelia-webpack-plugin": "^3.0.0",
+    "app-settings-loader": "^1.0.2",
     "copy-webpack-plugin": "^4.5.2",
+    "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^1.0.0",
     "del": "^3.0.0",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
@@ -62,6 +62,7 @@
     "nps-utils": "^1.7.0",
     "opn": "^5.4.0",
     "plugin-error": "^1.0.1",
+    "promise-polyfill": "^8.1.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "through2": "^2.0.3",
@@ -69,9 +70,9 @@
     "ts-loader": "^5.2.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.1.2",
-    "url-loader": "^1.1.1",
+    "url-loader": "^1.1.2",
     "vinyl-fs": "^3.0.3",
-    "webpack": "^4.20.2",
+    "webpack": "^4.27.0",
     "webpack-bundle-analyzer": "latest",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
@@ -87,6 +88,7 @@
       "ts"
     ],
     "transform": {
+      "^.+\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub",
       "^.+\\.ts$": "ts-jest"
     },
     "testRegex": "\\.spec\\.(ts|js)$",
@@ -113,8 +115,11 @@
     "node": ">= 6.0.0"
   },
   "scripts": {
-    "start": "nps",
-    "test": "nps test"
+    "build": "webpack --env.production --extractCss",
+    "start": "webpack-dev-server --extractCss",
+    "build:dev": "webpack --extractCss",
+    "analyze": "webpack --env.production --analyze",
+    "test": "au test"
   },
   "main": "dist/app.bundle.js"
 }

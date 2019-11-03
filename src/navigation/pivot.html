@@ -99,10 +99,10 @@ export class demo
                     <hljs language="javascript" linenumbers="true">
   public selectedTab = "k1";
 
-  onLinkClick(this:IDuReactWrapper, args: any[]): void 
+  onLinkClick = (item?: PivotItem, ev?: any)=>
   {
-      var item  = args[0];
-      this.parent.selectedTab = item.props.itemKey;       
+      //@ts-ignore
+      this.selectedTab = item.props.itemKey;       
   }
                       </hljs>
                   </div>

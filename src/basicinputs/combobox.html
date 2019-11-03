@@ -59,12 +59,12 @@
   { key: &#39;J&#39;, text: &#39;Option j&#39;, disabled: true }
 ];
 
-    public onChangeMulti = (args: any[]) => {
-      console.log("changed value");
-      console.log(args[0]);
-      console.log("index");
-      console.log(args[1]);
-    };
+  public onChange(event: any, option?: IComboBoxOption, index?: number, value?: string){
+    console.log(event);
+    console.log(option);
+    console.log(index);
+    console.log(value);
+  };
 
     public onFocus()
     {

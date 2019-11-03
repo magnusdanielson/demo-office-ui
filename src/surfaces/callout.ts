@@ -1,5 +1,3 @@
-import {DuCallout} from '@dunite/au-office-ui'
-
 export class callout
 {
   isCalloutHidden:boolean = true;
@@ -7,26 +5,26 @@ export class callout
   menuButtonElement:Element;
   menuButtonElement2:Element;
 
-  _onShowMenuClicked(this:DuCallout)
+  _onShowMenuClicked()
   {
-    this.parent.isCalloutHidden = !this.parent.isCalloutHidden;
+    this.isCalloutHidden = !this.isCalloutHidden;
   }
   
-  _onShowMenuClicked2(this:DuCallout)
+  _onShowMenuClicked2()
   {
-    this.parent.isCalloutHidden2 = !this.parent.isCalloutHidden2;
+    this.isCalloutHidden2 = !this.isCalloutHidden2;
   }
 
-  _onCalloutDismiss(this:DuCallout)
+  _onCalloutDismiss()
   {
     console.log("_onCalloutDismiss");
-    this.parent.isCalloutHidden = false;
+    this.isCalloutHidden = false;
   }
 
-  _onCalloutDismiss2(this:DuCallout)
+  _onCalloutDismiss2()
   {
     console.log("_onCalloutDismiss2");
-    this.parent.isCalloutHidden2 = false;
+    this.isCalloutHidden2 = false;
   }
 
   attached()

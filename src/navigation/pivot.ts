@@ -1,5 +1,4 @@
-import { PivotLinkSize, PivotLinkFormat } from 'office-ui-fabric-react/lib/Pivot'
-import {IAuReactWrapper} from '@dunite/au-react-wrapper'
+import { PivotLinkSize, PivotLinkFormat, PivotItem } from 'office-ui-fabric-react/lib/Pivot'
 
 export class pivot
 {
@@ -18,15 +17,12 @@ export class pivot
     ];
 
     pivotLinkSize = PivotLinkSize.large;
-
     pivotTabFormat = PivotLinkFormat.tabs;
-
     public selectedTab = "k1";
 
-    onLinkClick(this:IAuReactWrapper, args: any[]): void 
+    onLinkClick = (item?: PivotItem, ev?: any)=>
     {
-        console.log(this);
-        var item  = args[0];
-        this.parent.selectedTab = item.props.itemKey;       
+        //@ts-ignore
+        this.selectedTab = item.props.itemKey;       
     }
 }

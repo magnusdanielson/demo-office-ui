@@ -2,9 +2,7 @@ import { INavLink } from 'office-ui-fabric-react/lib/Nav';
 export class nav
 {
     
-    onLinkClick = (args:[any,INavLink]) => {
-        //@ts-ignore
-        var [reactEvent,item ] = args;
+    onLinkClick = (reactEvent:any,item:INavLink) => {
         console.log('Clicked on ' + item.name + ' with key ' + item.key);
       };
 

@@ -17,11 +17,9 @@
     Binding to return value of function
     <du-command-bar items.one-time="getItems()" ></du-command-bar>
 
-    Typing function on parent for event
-    onLinkClick = (args:[any,INavLink]) => {
-        //@ts-ignore
-        var [reactEvent,item ] = args;
-        console.log('Clicked on ' + item.name + ' with key ' + item.key);
-      };
+    For event
+    onLinkClick = (reactEvent:any,item:INavLink) => {
+      console.log('Clicked on ' + item.name + ' with key ' + item.key);
+    };
     
     </template>

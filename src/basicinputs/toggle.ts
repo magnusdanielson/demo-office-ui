@@ -2,9 +2,8 @@ export class toggle
 {
     public checked:boolean = false;
 
-    onChange( args:any[])
+    onChange(event: any, checked?: boolean)
     {
-        let checked: boolean = args[0];
         console.log("onChange");
         console.log(checked); 
         this.checked = checked; 

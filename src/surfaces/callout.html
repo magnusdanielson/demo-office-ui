@@ -42,26 +42,8 @@
         &lt;/div&gt;
       &lt;/div&gt;&lt;/du-callout&gt; 
             </hljs>
-            <hljs language="javascript" linenumbers="true">
-  isCalloutHidden:boolean = true;
-  menuButtonElement:Element;
+            <hljs language="javascript" linenumbers="true" include="https://raw.githubusercontent.com/magnusdanielson/demo-office-ui/master/src/surfaces/callout.ts">
   
-  _onShowMenuClicked(this:DuCallout)
-  {
-    this.parent.isCalloutHidden = !this.parent.isCalloutHidden;
-  }
-  
-  _onCalloutDismiss(this:DuCallout)
-  {
-    console.log(&quot;_onCalloutDismiss&quot;);
-    this.parent.isCalloutHidden = false;
-  }
-
-  attached()
-  {
-    console.log(&quot;attached&quot;);
-    this.menuButtonElement = document.getElementById(&#39;menuButtonElement&#39;);
-  }
             </hljs>
           </div>
           <div slot="example">

@@ -46,13 +46,13 @@
                       </hljs>
                       <hljs language="javascript" linenumbers="true">
   myvalue:any;
-  onChange( args: any[])
-  {
-    console.log(&quot;Event&quot;);
-    console.log(args[0]);
-    console.log(&quot;Value&quot;);
-    console.log(args[1]);
-  }
+  onChange(event?: any, option?: IChoiceGroupOption)
+    {
+      console.log("Event");
+      console.log(event);
+      console.log("Option");
+      console.log(option);
+    }
                       </hljs>
                     </div>
                     <div slot="example">

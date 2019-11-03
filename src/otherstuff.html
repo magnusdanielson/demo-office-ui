@@ -1,13 +1,8 @@
 <template>
-        <du-command-bar-button
-        text="Create Account2" on-menu-click.bind="abuttonclick" icon-props.bind="actionicon" menu-props.one-way="{
-          'items':[
-          {
-            'key': 'emailMessage',
-            text: 'Email message',
-            name:'sdfsdfsdf',
-            iconProps: { iconName: 'Mail' }
-          }
-            ]
-      }" ></du-command-bar-button>
+'${myvalue}'
+    hej
+        <mytext value.bind="myvalue" on-get-error-message.bind="onGetErrorMessagePromise"  label="Standard bound to"  ></mytext>
+
+        hej
+        <input value.bind="myvalue"></input>
 </template>

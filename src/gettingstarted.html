@@ -23,7 +23,7 @@
 
     <ol class="steps">
         <li>
-            <p>Create your project the way you are used to. We have tested with Webpack only but any other loader should just work.</p>
+            <p>Create your project the way you are used to. We have tested with Webpack and RequireJS only but any other loader should just work. If you are using RequireJS, follow specific instructions.</p>
         </li>
         <li>
             <p>Add the npm package @dunite/au-office-ui with below command. We have tested with npm and yarn, if you are using anything else please give feedback if it does not work for you.</p>
@@ -82,13 +82,8 @@ npm install @dunite/au-office-ui --save
             </hljs>
             <p>Note that you need to use .one-time since Aurelia can not update the literal object.</p>
             <p>If you add bindings to any event always use .bind with the function name, see on-click.bind example above.</p>
-            <p>In the event function in your view, the 'this' keyword always points to the Office-UI element. In the code example below, we use a TypeScript feature to explicitly tell the compiler which type this has. If you need to reach out to the parent element, just use this.parent. The parent property is assigned on all au-office-ui elements and points to the hosting element, the parent. The parent property is actually assigned to the binding context. </p>
-            <hljs language="javascript" linenumbers="true">
-    public onChange(this:DuDropdown &amp; IDropdownProps, args):void
-    {
-    console.log(&quot;The option has been changed to Object:&quot;);
-    }
-            </hljs>
+            <p>As of version 2.0.0 of au-office-ui the 'this' keyword always points the current view model as you would expect. This is a breaking change from previous version where the 'this' keyword refered to the au-component.</p>
+
         </li>
     </ol>
 

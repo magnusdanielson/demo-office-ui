@@ -1,4 +1,4 @@
-import {IAuReactWrapper} from '@dunite/au-react-wrapper';
+
 
 export class hovercard
 {
@@ -10,9 +10,9 @@ export class hovercard
     //     renderData: item
     //   };
 
-    actionButtonClick(this:IAuReactWrapper)
+    actionButtonClick()
     {
-        this.parent.hidden = ! this.parent.hidden;
+        this.hidden = ! this.hidden;
     }
 
 }

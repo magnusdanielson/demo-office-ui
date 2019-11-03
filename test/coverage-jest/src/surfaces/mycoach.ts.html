@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/surfaces/mycoach.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/surfaces</a> mycoach.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/52</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Coachmark, ICoachmarkProps } from 'office-ui-fabric-react/lib/Coachmark';</span>
+<span class="cstat-no" title="statement not covered" >import {  customElement, inject, noView, bindable } from 'aurelia-framework';</span>
+<span class="cstat-no" title="statement not covered" >import { addProperties, onlyAureliaBound } from './myutils';</span>
+<span class="cstat-no" title="statement not covered" >import { ITeachingBubbleProps, TeachingBubbleContent } from 'office-ui-fabric-react/lib/TeachingBubble';</span>
+<span class="cstat-no" title="statement not covered" >import * as React from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import * as ReactDom from 'react-dom';</span>
+<span class="cstat-no" title="statement not covered" >import { mybase } from './mybase';</span>
+<span class="cstat-no" title="statement not covered" >import { mystate } from './mystate';</span>
+<span class="cstat-no" title="statement not covered" >import { mystatenochild } from './mystatenochild';</span>
+&nbsp;
+let reactprops: ICoachmarkProps = &lt;ICoachmarkProps&gt;<span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.beaconColorOne = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.beaconColorTwo = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.className = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.color = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.delayBeforeCoachmarkAnimation = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.delayBeforeMouseOpen = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.isCollapsed = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.isPositionForced = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.mouseProximityOffset = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.target = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onAnimationOpenEnd = &lt;any&gt;onlyAureliaBound;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onAnimationOpenStart = &lt;any&gt;onlyAureliaBound;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onDismiss = &lt;any&gt;onlyAureliaBound;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onMouseMove = &lt;any&gt;onlyAureliaBound;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.positioningContainerProps = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.preventDismissOnLostFocus = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.preventFocusOnMount = &lt;any&gt;{};</span>
+&nbsp;
+@inject(Element)
+@customElement('mycoach')
+<span class="cstat-no" title="statement not covered" >export class <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >mycoach </span>extends mybase {</span></span>
+&nbsp;
+  container: HTMLElement | null;
+  
+<span class="fstat-no" title="function not covered" >  constructor(</span>element) {
+<span class="cstat-no" title="statement not covered" >    super(element);</span>
+<span class="cstat-no" title="statement not covered" >    this.hiddenIsHidden = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.hiddenName = 'hidden';</span>
+  }
+&nbsp;
+  public <span class="cstat-no" title="statement not covered" >teachingBubbleElement: any = {};</span>
+&nbsp;
+  @bindable()
+<span class="cstat-no" title="statement not covered" >  public teachingBubbleContent: ITeachingBubbleProps;</span>
+&nbsp;
+  @bindable()
+<span class="cstat-no" title="statement not covered" >  hidden: boolean;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  attached</span>() {
+&nbsp;
+    
+<span class="cstat-no" title="statement not covered" >    this.renderReact2(reactprops);</span>
+  }
+&nbsp;
+  public <span class="fstat-no" title="function not covered" >renderReact2</span>( reactprops: any) {
+<span class="cstat-no" title="statement not covered" >    ReactDom.unmountComponentAtNode(this.element);</span>
+&nbsp;
+    // this is bound to Aurelia class
+<span class="cstat-no" title="statement not covered" >    this.container = this.element.querySelector('.au-react-root');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (this.container != null)</span>
+    {
+<span class="cstat-no" title="statement not covered" >      this.container.remove();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.container = document.createElement('span');</span>
+<span class="cstat-no" title="statement not covered" >    this.container.setAttribute('class', 'au-react-root');</span>
+<span class="cstat-no" title="statement not covered" >    this.element.appendChild(this.container);</span>
+&nbsp;
+&nbsp;
+    //@ts-ignore
+<span class="cstat-no" title="statement not covered" >    this.teachingBubbleContent.aureliaHost = this;</span>
+    //@ts-ignore
+<span class="cstat-no" title="statement not covered" >    this.teachingBubbleContent.reactClass = TeachingBubbleContent</span>
+&nbsp;
+    //let reactTeachingBubbleElement = React.createElement(TeachingBubbleContent, this.teachingBubbleContent);
+    let reactTeachingBubbleElement = <span class="cstat-no" title="statement not covered" >React.createElement(mystate , this.teachingBubbleContent);</span>
+    
+    var a = <span class="cstat-no" title="statement not covered" >this.createState(reactprops);</span>
+<span class="cstat-no" title="statement not covered" >    a.aureliaHost = this;</span>
+<span class="cstat-no" title="statement not covered" >    a.reactClass = Coachmark</span>
+&nbsp;
+&nbsp;
+&nbsp;
+    const reactElement = <span class="cstat-no" title="statement not covered" >React.createElement(mystatenochild, a, reactTeachingBubbleElement);</span>
+<span class="cstat-no" title="statement not covered" >    console.log("mycoach");</span>
+<span class="cstat-no" title="statement not covered" >    this.reactComponent = ReactDom.render(reactElement, this.container);</span>
+  }
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >addProperties(mycoach, reactprops);</span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Sep 06 2019 15:13:15 GMT+0200 (Västeuropa, sommartid)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

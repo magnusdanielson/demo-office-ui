@@ -1,12 +1,14 @@
+import { IChoiceGroupOption } from "office-ui-fabric-react/lib/components/ChoiceGroup/ChoiceGroup.types";
+
 export class choicegroup
 {
   myvalue:any;
-    onChange( args: any[])
+    onChange(event?: any, option?: IChoiceGroupOption)
     {
       console.log("Event");
-      console.log(args[0]);
-      console.log("Value");
-      console.log(args[1]);
+      console.log(event);
+      console.log("Option");
+      console.log(option);
     }
 
     public optionsBar:any =[

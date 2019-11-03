@@ -54,49 +54,8 @@
   &lt;du-spin-button min=&quot;0&quot; max=&quot;100&quot; precision=&quot;0&quot; on-increment.bind=&quot;onIncrement&quot; on-decrement.bind=&quot;onDecrement&quot; on-validate.bind=&quot;onValidate&quot; value.bind=&quot;spinvalue3&quot; step.bind=&quot;1&quot; label=&quot;Custom handler Spinbutton:&quot; &gt;&lt;/du-spin-button&gt;
 
                       </hljs>
-                      <hljs language="javascript" linenumbers="true">
-  public spinvalue3:string = &quot;4 cm&quot;;
-
-  onIncrement=(value: any[]) =&gt; {
-      let _value = String(value[0]);
-
-      console.log(_value);
-      let newValue = this._removeSuffix(_value, this.suffix);
-      this.spinvalue3 =  String(+newValue + 2) + this.suffix;
-    }
-
-  onValidate=(value: any[]) =&gt; {
-      let _value = String(value[0]);
-
-      let newValue = this._removeSuffix(_value, this.suffix);
-      if (newValue.trim().length === 0 || isNaN(+newValue)) {
-        return &#39;0&#39; + this.suffix;
-      }
-
-      this.spinvalue3 =  String(newValue) + this.suffix;
-    }
-    
-  onDecrement=(value: any[]) =&gt; {
-      let _value = String(value[0]);
-      let newValue = this._removeSuffix(_value, this.suffix);
-      this.spinvalue3 =  String(+newValue - 2) + this.suffix;
-  }
-
-  private _hasSuffix(value: string, suffix: string): Boolean {
-    console.log(value);
-    const subString = value.substr(value.length - suffix.length);
-    return subString === suffix;
-  }
-
-  private _removeSuffix(value: string, suffix: string): string 
-  {
-      if (!this._hasSuffix(value, suffix)) {
-      return value;
-      }
-
-      return value.substr(0, value.length - suffix.length);
-  }
-                        </hljs>
+                      <hljs language="javascript" linenumbers="true" include="https://raw.githubusercontent.com/magnusdanielson/demo-office-ui/master/src/basicinputs/spinbutton.ts">
+                          </hljs>
                     </div>
                     <div slot="example">
     

@@ -24,10 +24,9 @@
                   <hljs language="javascript" linenumbers="true">
   public thecolor:string = &quot;#ffffff&quot;;
 
-  colorChanged(this:IColorPickerProps, args:any[])
+  colorChanged( ev:any, colorObj: IColor)
   {
-      let newValue:string = args[1].str;
-      this.color= newValue;
+      this.thecolor= colorObj.str;
   }
                     </hljs>
                 </div>

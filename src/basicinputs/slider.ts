@@ -5,8 +5,8 @@ export class slider
     public min = -5;
 
     sliderValue = 25;
-    public onchange(this:ISliderProps, value:any)
+    public onchange( value:any)
     {
-        this.value = value[0];
+        this.sliderValue = value;
     }
 }

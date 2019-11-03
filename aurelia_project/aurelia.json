@@ -1,10 +1,6 @@
 {
   "name": "removeau",
   "type": "project:application",
-  "bundler": {
-    "id": "webpack",
-    "displayName": "Webpack"
-  },
   "build": {
     "options": {
       "server": "dev",
@@ -13,16 +9,11 @@
     }
   },
   "platform": {
-    "id": "web",
-    "displayName": "Web",
     "hmr": false,
     "open": false,
     "port": 8080,
+    "host":"localhost",
     "output": "dist"
-  },
-  "loader": {
-    "id": "none",
-    "displayName": "None"
   },
   "transpiler": {
     "id": "typescript",

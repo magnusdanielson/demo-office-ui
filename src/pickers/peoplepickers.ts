@@ -1,9 +1,7 @@
-//import { ITag } from 'office-ui-fabric-react/lib/Pickers';
 import { IPersonaProps } from 'office-ui-fabric-react/lib/Persona';
 import { people, mru } from './PeoplePickerExampleData';
 import { IBasePickerSuggestionsProps, ValidationState } from 'office-ui-fabric-react/lib/Pickers';
 import { assign } from 'office-ui-fabric-react/lib/Utilities';
-import {IAuReactWrapper} from '@dunite/au-react-wrapper';
 
 
 export class peoplepickers
@@ -12,36 +10,37 @@ export class peoplepickers
     state:any;
 
     public selectedItemsNormal: any[] = [];
-    public onChangeNormal(this:IAuReactWrapper, args:any[])
+    public onChangeNormal( items: any[])
     {
-        this.parent.selectedItemsNormal = args[0];
+        this.selectedItemsNormal = items;
     }
 
     public selectedItemsCompact: any[] = [];
-    public onChangeCompact(this:IAuReactWrapper,args:any[])
+    public onChangeCompact(items: any[])
     {
-        this.parent.selectedItemsCompact = args[0];
+        this.selectedItemsCompact = items;
     }
 
     public selectedItemsList: any[] = [];
-    public onChangeList(this:IAuReactWrapper,args:any[])
+    public onChangeList(items: any[])
     {
-        this.parent.selectedItemsList = args[0];
+        this.selectedItemsList =items;
     }
 
     public selectedItemsLimited: any[] = [];
-    public onChangeLimited(this:IAuReactWrapper, args:any[])
+    public onChangeLimited( items: any[])
     {
-        this.parent.selectedItemsLimited = args[0];
+        this.selectedItemsLimited = items;
     }
     // OK
-    private onItemSelected(args:any[]): IPersonaProps | null
+    private onItemSelected(item: IPersonaProps): Promise<IPersonaProps> 
     {
-        let item: IPersonaProps = args[0];
-
         // Put your logic here to return null or modify object
 
-        return item;
+        const processedItem = { ...item };
+        processedItem.text = `${item.text} (selected)`;
+        return new Promise<IPersonaProps>((resolve, reject) => setTimeout(() => resolve(processedItem), 250));
+        ;
     }
 
     // OK
@@ -82,22 +81,21 @@ export class peoplepickers
     }
 
     // OK
-    private _returnMostRecentlyUsed(this:IAuReactWrapper,args:any[]): IPersonaProps[] | Promise<IPersonaProps[]>
+    private _returnMostRecentlyUsed(currentPersonas: IPersonaProps[]): IPersonaProps[] | Promise<IPersonaProps[]>
     {
-        let currentPersonas: IPersonaProps[] = args[0];
-        let { mostRecentlyUsed } = this.parent.state;
-        mostRecentlyUsed = this.parent._removeDuplicates(mostRecentlyUsed, currentPersonas);
-        return this.parent._filterPromise(mostRecentlyUsed);
+
+        let { mostRecentlyUsed } = this.state;
+        mostRecentlyUsed = this._removeDuplicates(mostRecentlyUsed, currentPersonas);
+        return this._filterPromise(mostRecentlyUsed);
     }
 
-    private _returnMostRecentlyUsedWithLimit(this:IAuReactWrapper, args:any[]): IPersonaProps[] | Promise<IPersonaProps[]>
+    private _returnMostRecentlyUsedWithLimit(currentPersonas: IPersonaProps[]): IPersonaProps[] | Promise<IPersonaProps[]>
     {
-        let currentPersonas: IPersonaProps[] = args[0];
         console.log("_returnMostRecentlyUsedWithLimit")
-        let { mostRecentlyUsed } = this.parent.state;
-        mostRecentlyUsed = this.parent._removeDuplicates(mostRecentlyUsed, currentPersonas);
+        let { mostRecentlyUsed } = this.state;
+        mostRecentlyUsed = this._removeDuplicates(mostRecentlyUsed, currentPersonas);
         mostRecentlyUsed = mostRecentlyUsed.splice(0, 3);
-        return this.parent._filterPromise(mostRecentlyUsed);
+        return this._filterPromise(mostRecentlyUsed);
       };
 
       // OK
@@ -166,20 +164,21 @@ export class peoplepickers
         }
       };
 
-      private _onFilterChangedWithLimit(this:IAuReactWrapper, args:any[]) : IPersonaProps[] | Promise<IPersonaProps[]>
+      private _onFilterChangedWithLimit( filterText: string,
+        currentPersonas: IPersonaProps[],
+        limitResults?: number) : IPersonaProps[] | Promise<IPersonaProps[]>
       {
-        let filterText: string = args[0];
-        let currentPersonas: IPersonaProps[] = args[1];
-        let limitResults = 3
+        console.log(limitResults);
+        limitResults = 3
           
         if (filterText) 
         {
-          let filteredPersonas: IPersonaProps[] = this.parent._filterPersonasByText(filterText);
+          let filteredPersonas: IPersonaProps[] = this._filterPersonasByText(filterText);
     
-          filteredPersonas = this.parent._removeDuplicates(filteredPersonas, currentPersonas);
+          filteredPersonas = this._removeDuplicates(filteredPersonas, currentPersonas);
           filteredPersonas = filteredPersonas.splice(0, limitResults);
 
-          return this.parent._filterPromise(filteredPersonas);
+          return this._filterPromise(filteredPersonas);
         } 
         else 
         {
@@ -188,23 +187,18 @@ export class peoplepickers
       };
 
       // OK
-      private _onFilterChanged(this:IAuReactWrapper, args:any[]): IPersonaProps[] | Promise<IPersonaProps[]> 
+      private _onFilterChanged(  filterText: string,
+        currentPersonas: IPersonaProps[],
+        limitResults?: number): IPersonaProps[] | Promise<IPersonaProps[]> 
       {
-        let filterText: string = args[0];
-        let currentPersonas: IPersonaProps[] = args[1];
-        let limitResults: undefined | number;
-        if(args.length == 3)
-        {
-            limitResults = args[2];
-        }
-          
+         
         if (filterText) 
         {
-          let filteredPersonas: IPersonaProps[] = this.parent._filterPersonasByText(filterText);
+          let filteredPersonas: IPersonaProps[] = this._filterPersonasByText(filterText);
     
-          filteredPersonas = this.parent._removeDuplicates(filteredPersonas, currentPersonas);
+          filteredPersonas = this._removeDuplicates(filteredPersonas, currentPersonas);
           filteredPersonas = limitResults ? filteredPersonas.splice(0, limitResults) : filteredPersonas;
-          return this.parent._filterPromise(filteredPersonas);
+          return this._filterPromise(filteredPersonas);
         } 
         else 
         {

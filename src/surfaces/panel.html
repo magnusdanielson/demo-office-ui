@@ -47,33 +47,22 @@
                     </hljs>
                     <hljs language="javascript" linenumbers="true">
   isOpen:boolean = false;
-
-  panelprops:IPanelProps=
+  type :PanelType = PanelType.smallFixedFar;
+  headerText:string = "Panel - Small, right-aligned, fixed, with footer";
+  onDismiss = ()=>
   {
-    isOpen : this.isOpen,
-    type : PanelType.smallFixedFar,
-    onDismiss: ()=&gt;
-    {
-      console.log(&quot;test Panel dismiss&quot;);
-      console.log(this);
-      this.isOpen = false;
-
-    },
-    headerText:&quot;Panel - Small, right-aligned, fixed, with footer&quot;
-  };
-
-
-
-  isOpenSwap(this:IDuReactWrapper) 
+    this.isOpen = false;
+  }
+  isOpenSwap = () =>
   {
-    this.parent.isOpen = ! this.parent.isOpen;
+    this.isOpen = ! this.isOpen;
   }
                     </hljs>
                   </div>
                   <div slot="example">
                         <du-panel hidden.bind="!isOpen" is-open.bind="isOpen" 
-                        on-dismiss.bind="panelprops.onDismiss" type.bind="panelprops.type" 
-                        header-text.bind="panelprops.headerText" >
+                        on-dismiss.bind="onDismiss" type.bind="type" 
+                        header-text.bind="headerText" >
                         <du-choice-group defaultSelectedKey="B" options.one-time="[
                         {
                           key: 'A',

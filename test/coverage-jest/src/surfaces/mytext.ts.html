@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/surfaces/mytext.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/surfaces</a> mytext.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { customElement, inject } from 'aurelia-framework';</span>
+<span class="cstat-no" title="statement not covered" >import { TextField, ITextFieldProps, ITextField } from 'office-ui-fabric-react/lib/TextField';</span>
+<span class="cstat-no" title="statement not covered" >import { addProperties, onlyAureliaBound } from './myutils';</span>
+<span class="cstat-no" title="statement not covered" >import { mybasenochild } from './mybasenochild';</span>
+&nbsp;
+let reactprops: ITextFieldProps &amp; ITextField = <span class="cstat-no" title="statement not covered" >{} as ITextFieldProps &amp; ITextField;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.ariaLabel = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onBeforeChange = onlyAureliaBound;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.validateOnFocusIn = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.validateOnFocusOut = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.validateOnLoad = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.disabled = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.multiline = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.className = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.label = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.resizable = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onChange = <span class="fstat-no" title="function not covered" >(_</span>this, newValue) =&gt; { <span class="cstat-no" title="statement not covered" >console.log('onChange2'); <span class="cstat-no" title="statement not covered" ></span>console.log(_this); <span class="cstat-no" title="statement not covered" ></span>console.log(newValue); <span class="cstat-no" title="statement not covered" ></span>_this['value'] = newValue[1]; </span>};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.autoAdjustHeight = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.underlined = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onNotifyValidationResult = onlyAureliaBound;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.onGetErrorMessage = &lt;any&gt;onlyAureliaBound;</span>
+<span class="cstat-no" title="statement not covered" >reactprops.borderless = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.autoComplete = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.value = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.description = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.prefix = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.suffix = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.defaultValue = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.readOnly = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.errorMessage = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.deferredValidationTime = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.inputClassName = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.mask = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.maskChar = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.maskFormat = &lt;any&gt;{};</span>
+//@ts-ignore Native props allowed
+<span class="cstat-no" title="statement not covered" >reactprops.required = &lt;any&gt;{};</span>
+//@ts-ignore Native props allowed
+<span class="cstat-no" title="statement not covered" >reactprops.placeholder = &lt;any&gt;{};</span>
+<span class="cstat-no" title="statement not covered" >reactprops.iconProps = &lt;any&gt;{};</span>
+&nbsp;
+&nbsp;
+@inject(Element)
+@customElement('mytext')
+<span class="cstat-no" title="statement not covered" >export class <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >mytext </span>extends  mybasenochild implements ITextFieldProps {</span></span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>element) {
+<span class="cstat-no" title="statement not covered" >  super(element);</span>
+<span class="cstat-no" title="statement not covered" >    this.hiddenIsHidden = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.hiddenName = 'hidden';</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  hidden: boolean = false;</span>
+  className:string;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  attached</span>() {
+<span class="cstat-no" title="statement not covered" >    console.log('Attached Textfield');</span>
+<span class="cstat-no" title="statement not covered" >    this.renderReact(TextField, this.createState(reactprops));</span>
+    // Fixing issue with autoAdjustHeight
+    //@ts-ignore
+<span class="cstat-no" title="statement not covered" >    if (this.autoAdjustHeight == true)</span>
+    {
+      let elements = <span class="cstat-no" title="statement not covered" >this.element.getElementsByTagName('textarea');</span>
+<span class="cstat-no" title="statement not covered" >      if ( elements.length &gt; 0)</span>
+      {
+        let element  = &lt;HTMLTextAreaElement&gt;<span class="cstat-no" title="statement not covered" >elements.item(0);</span>
+<span class="cstat-no" title="statement not covered" >        element.setAttribute('style', '');</span>
+      } 
+    }
+  
+  }
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >addProperties(mytext, reactprops);</span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Sep 06 2019 15:13:15 GMT+0200 (Västeuropa, sommartid)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

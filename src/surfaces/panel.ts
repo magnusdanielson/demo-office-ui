@@ -1,28 +1,16 @@
 import { IPanelProps,PanelType } from 'office-ui-fabric-react/lib/Panel';
-import {IAuReactWrapper} from '@dunite/au-react-wrapper';
 
 export class panel {
 
   isOpen:boolean = false;
-
-  panelprops:IPanelProps=
+  type :PanelType = PanelType.smallFixedFar;
+  headerText:string = "Panel - Small, right-aligned, fixed, with footer";
+  onDismiss = ()=>
   {
-    isOpen : this.isOpen,
-    type : PanelType.smallFixedFar,
-    onDismiss: ()=>
-    {
-      console.log("test Panel dismiss");
-      console.log(this);
-      this.isOpen = false;
-
-    },
-    headerText:"Panel - Small, right-aligned, fixed, with footer"
-  };
-
-
-
-  isOpenSwap(this:IAuReactWrapper) 
+    this.isOpen = false;
+  }
+  isOpenSwap = () =>
   {
-    this.parent.isOpen = ! this.parent.isOpen;
+    this.isOpen = ! this.isOpen;
   }
 }

@@ -1,9 +1,11 @@
-import {DropdownMenuItemType, IDropdownProps} from 'office-ui-fabric-react/lib/Dropdown'
-import {DuDropdown} from '@dunite/au-office-ui'
+import {DropdownMenuItemType, IDropdownProps, IDropdownOption} from 'office-ui-fabric-react/lib/Dropdown'
+
 export class dropdown
 {
     
 
+  selectedItem:string;
+  errorMessage:string;
   me:any;
 
     public simpleOptions:any =
@@ -38,13 +40,13 @@ export class dropdown
         { key: 'Germany', text: 'germany' }
       ];
 
-      public selectedItem: undefined;
 
-      public onChange(this:DuDropdown & IDropdownProps, args):void
+      public onChange(event: any, option?: IDropdownOption, index?: number):void
       {
         console.log("The option has been changed to Object:");
-        
-        if(args[1].key != 'English')
+        console.log(option);
+        console.log(index);
+        if(option.key != 'English')
         {
           this.errorMessage = "An error";
         }
@@ -52,13 +54,13 @@ export class dropdown
         {
           this.errorMessage = "";
         }
-        if(args[1].key != 'Banana')
+        if(option.key != 'Banana')
         {
-          this.selectedKey = args[1].key;
+          this.selectedItem = <string> option.key;
         }
         else
         {
-          this.selectedKey = "undefined"; // Yes, a string
+          this.selectedItem = "undefined"; // Yes, a string
         }
 
       }

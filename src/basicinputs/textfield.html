@@ -38,25 +38,33 @@
     
 </hljs>
                       <hljs language="typescript" linenumbers="true">
-  getErrorMessage(args:any[])
+  public onchange(event: any, newValue?: string)
   {
-      let value = args[0];
-      return value.length &#x3C; 3 ? &#x27;&#x27; : &#x60;The length of the input value should less than 3, actual is ${value.length}.&#x60;;
+      console.log(event)
+      console.log(newValue);
+      this.myvalue = newValue;
+
   }
 
-  getErrorMessagePromise(this:DuTextField &amp; ITextFieldProps,args:any[]): Promise&#x3C;string&#x3E; 
-  {
-      return new Promise(resolve =&#x3E; {
-      // resolve the promise after 5 seconds.
-          setTimeout(() =&#x3E; resolve(this.parent.getErrorMessage(args)), 5000);
+  public onGetErrorMessage =(value: string) => {
+      console.log('onGetErrorMessage');
+      console.log(value);
+      return value.length < 3 ? '' : `Input value length must be less than 3. Actual length is ${value.length}.`;
+    };
+
+  
+    private onGetErrorMessagePromise = (value: string): Promise<string> => {
+      return new Promise(resolve => {
+        // resolve the promise after 3 second.
+        setTimeout(() => resolve(this.onGetErrorMessage(value)), 5000);
       });
-  }
-                      </hljs>
+    };
+                      </hljs> 
                     </div>
                     <div slot="example">
                       name: ${name} <br/>
-                        <input value.bind="name"></input>
-                        <du-text-field value.bind="name" label="Standard bound to {name}" ></du-text-field>
+                        <input value.bind="myvalue"></input>
+                        <du-text-field value.bind="myvalue" validate.bind="onchange" label="Standard bound to ${myvalue}" ></du-text-field>
                         <du-text-field label="Disabled" disabled.one-time="true" ></du-text-field>
                         <du-text-field label="Read Only" read-only.one-time="true" ></du-text-field>
                         <du-text-field label="Required" required.one-time="true" ></du-text-field>
@@ -72,9 +80,16 @@
                         <du-text-field label="Suffix" suffix=".com"  ></du-text-field>
                         <du-text-field label="With icon" icon-props.one-time="{ iconName: 'Calendar' }"  ></du-text-field>
                         <du-text-field label="With description" description="A description"></du-text-field>
-                        <du-text-field label="TextField with a string-based validator." on-get-error-message.bind="getErrorMessage" ></du-text-field>
-                        <du-text-field label="TextField with a Promise-based validator." on-get-error-message.bind="getErrorMessagePromise" ></du-text-field>
-                    </div>
+                        
+                        <du-text-field label="TextField with a string-based validator." 
+                        on-get-error-message.bind="onGetErrorMessage"  ></du-text-field>
+                        
+                        <du-text-field on-before-change.bind="onchange" on-changed.bind="onchange" validate.bind="onchange"
+                        label="TextField with a Promise-based validator." on-get-error-message.bind="onGetErrorMessagePromise" 
+                         >
+                      </du-text-field>
+                    
+                      </div>
                   </examplecard>
   </div>
 </template>

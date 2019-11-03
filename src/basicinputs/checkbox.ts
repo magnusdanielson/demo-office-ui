@@ -9,6 +9,6 @@ export class checkbox
 
     onControlledChange(event:any, isChecked: boolean)
     {
-        this.checked = ! this.checked;
+        this.checked = isChecked;
     }
 }

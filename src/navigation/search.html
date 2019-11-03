@@ -21,10 +21,16 @@
   on-change.bind=&#x22;onChange&#x22;&#x3E;&#x3C;/du-search-box&#x3E;
       </hljs>
       <hljs language="javascript"  linenumbers="true">
-  onSearch(args:any[])
+  searchText:string = "example";
+
+  onSearch= (searchCommandValue: any) =>
   {
-      let newValue = args[0];
-      console.log(  'onSearch new value = ' +  newValue);
+      console.log(  'searchCommandValue = ' +  searchCommandValue);
+  }
+
+  onChange2= (newValue?: string) =>
+  {
+      this.searchText = newValue;
   }
 
   onBlur()
@@ -32,9 +38,8 @@
       console.log("onBlur");
   }
 
-  onChange(args:any[])
+  onChange ( newValue?: string)
   {
-      let newValue = args[0];
       console.log( 'onChange new value = ' + newValue);
   }
 
@@ -64,19 +69,24 @@
   underlined=&#x22;true&#x22;&#x3E;&#x3C;/du-search-box&#x3E;
       </hljs>
       <hljs language="javascript" linenumbers="true">
-  searchText:string = &quot;example&quot;;
-  
-  onSearch2(this:DuSearchBox &amp; ISearchBoxProps, args:any[])
-  {
-      this.value = args[0];
-  }
+          searchText:string = "example";
+
+          onSearch= (searchCommandValue: any) =>
+          {
+              console.log(  'searchCommandValue = ' +  searchCommandValue);
+          }
+      
+          onChange2= (newValue?: string) =>
+          {
+              this.searchText = newValue;
+          }
       </hljs>
     </div>
       <div slot="example">
         <du-search-box
           placeholder="Search"
           underlined="true"
-          value.bind="searchText" on-change.bind="onSearch2"></du-search-box>
+          value.bind="searchText" on-change.bind="onChange2"></du-search-box>
           searchText:'${searchText}'
       </div>
     </examplecard>

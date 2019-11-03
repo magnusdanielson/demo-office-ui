@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/main.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">src</a> main.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/7</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/// &lt;reference types="aurelia-loader-webpack/src/webpack-hot-interface"/&gt;
+// we want font-awesome to load as soon as possible to show the fa-spinner
+import {Aurelia} from 'aurelia-framework'
+import environment from './environment';
+<span class="cstat-no" title="statement not covered" >import {PLATFORM} from 'aurelia-pal';</span>
+<span class="cstat-no" title="statement not covered" >import * as Bluebird from 'bluebird';</span>
+import { CustomElementRegistry } from 'aurelia-web-components';
+&nbsp;
+// remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
+<span class="cstat-no" title="statement not covered" >Bluebird.config({ warnings: { wForgottenReturn: false } });</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >export function <span class="fstat-no" title="function not covered" >configure(</span>aurelia: Aurelia) {</span>
+<span class="cstat-no" title="statement not covered" >  aurelia.use</span>
+    .standardConfiguration()
+    .feature(PLATFORM.moduleName('resources/index'))
+    .plugin(PLATFORM.moduleName("@dunite/au-office-ui"))
+    //.standardConfiguration()
+    // .developmentLogging()
+    .defaultBindingLanguage()
+    .globalResources(
+      [ // Registrera alla komponenter som denna webpart använder här
+        PLATFORM.moduleName('DuTest'),
+        // PLATFORM.moduleName('resources/elements/hljs'),
+        // PLATFORM.moduleName('resources/elements/examplecard'),
+        // PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Utilities/DuMarqueeSelection'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuActionButton'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuCheckbox'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuChoiceGroup'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuComboBox'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuCommandBarButton'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuCompoundButton'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuContextualMenu'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuDefaultButton'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuDropdown'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuIconButton'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuLabel'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuSlider'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuSpinButton'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuTextField'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/BasicInputs/DuToggle'),
+&nbsp;
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Content/DuDetailsList'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Content/DuFacepile'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Content/DuGroupedList'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Content/DuPersona'),
+&nbsp;
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuBreadcrumb'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuCommandBar'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuNav'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuPivot'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Navigation/DuSearchBox'),
+        
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuColorPicker'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuCompactPeoplePicker'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuDatePicker'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuListPeoplePicker'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuNormalPeoplePicker'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Pickers/DuTagPicker'),
+        
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/ProgressValidation/DuMessageBar'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/ProgressValidation/DuProgressIndicator'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/ProgressValidation/DuSpinner'),
+&nbsp;
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuCallout'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuCoachmark'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDialog'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDialogFooter'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDocumentCard'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDocumentCardActions'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDocumentCardActivity'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDocumentCardLocation'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDocumentCardPreview'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuDocumentCardTitle'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuHoverCard'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuTeachingBubble'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuTeachingBubbleContent'),
+        PLATFORM.moduleName('@dunite/au-office-ui/resources/elements/Surfaces/DuToolTip')
+&nbsp;
+        
+    ]);
+  // Uncomment the line below to enable animation.
+  // aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
+  // if the css animator is enabled, add swap-order="after" to all router-view elements
+&nbsp;
+  // Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
+  // aurelia.use.plugin(PLATFORM.moduleName('aurelia-html-import-template-loader'));
+&nbsp;
+  // aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
+&nbsp;
+  // if (environment.testing) {
+  //   aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
+  // }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return aurelia.start()</span>
+  .then(<span class="fstat-no" title="function not covered" >() </span>=&gt; <span class="cstat-no" title="statement not covered" >aurelia.setRoot(PLATFORM.moduleName('app')))</span>;
+  // .then(() =&gt; {
+  //   const registry = aurelia.container.get(CustomElementRegistry);
+&nbsp;
+  //   //The following line takes all global resource custom elements and registers them as web components.
+  //   //Once the element is registered, in-page elements will begin rendering.
+  //   registry.useGlobalElements();
+  // });
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Sep 06 2019 15:13:15 GMT+0200 (Västeuropa, sommartid)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

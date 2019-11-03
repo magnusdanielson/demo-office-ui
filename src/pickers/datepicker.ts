@@ -6,10 +6,9 @@ export class datepicker
 {
   mydate:any;
 
-  selected(this:IDatePickerProps,args:any[])
+  selected(date: Date | null | undefined)
   {
-    console.log(args);
-    this.value = args[0];
+    this.mydate =date;
   }
     onFormatDate = (date: Date): string => {
         return date.getDate() + '/' + (date.getMonth() + 1) + '/' + (date.getFullYear() % 100);

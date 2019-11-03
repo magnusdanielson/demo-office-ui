@@ -9,18 +9,17 @@ export class spinbutton
     public labelPosition = Position.end;
 
     private suffix = " cm";
-    onIncrement=(value: any[]) => {
-        let _value = String(value[0]);
+    onIncrement=(value: string) => {
 
-        console.log(_value);
-        let newValue = this._removeSuffix(_value, this.suffix);
+
+        console.log(value);
+        let newValue = this._removeSuffix(value, this.suffix);
         this.spinvalue3 =  String(+newValue + 2) + this.suffix;
       }
 
-    onValidate=(value: any[]) => {
-        let _value = String(value[0]);
+    onValidate=(value: string) => {
 
-        let newValue = this._removeSuffix(_value, this.suffix);
+        let newValue = this._removeSuffix(value, this.suffix);
         if (newValue.trim().length === 0 || isNaN(+newValue)) {
           return '0' + this.suffix;
         }
@@ -28,9 +27,8 @@ export class spinbutton
         this.spinvalue3 =  String(newValue) + this.suffix;
       }
       
-    onDecrement=(value: any[]) => {
-        let _value = String(value[0]);
-        let newValue = this._removeSuffix(_value, this.suffix);
+    onDecrement=(value: string) => {
+        let newValue = this._removeSuffix(value, this.suffix);
         this.spinvalue3 =  String(+newValue - 2) + this.suffix;
     }
 

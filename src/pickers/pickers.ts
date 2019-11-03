@@ -1,5 +1,4 @@
-import { ITag, IBasePickerProps } from 'office-ui-fabric-react/lib/Pickers';
-import {IAuReactWrapper} from '@dunite/au-react-wrapper';
+import { ITag } from 'office-ui-fabric-react/lib/Pickers';
 
 
 const _testTags: ITag[] = [
@@ -31,24 +30,22 @@ export class pickers
         'aria-label': 'Tag Picker'
       };
 
-    public onFilterChanged(this:IAuReactWrapper, args:any[]): ITag[] 
+    public onFilterChanged( filterText: string, tagList: ITag[]): ITag[] 
     {
-        let filterText: string = args[0];
-        let tagList: ITag[] = args[1];
 
         let retValue =  filterText
             ? _testTags
                 .filter(tag => tag.name.toLowerCase().indexOf(filterText.toLowerCase()) === 0)
-                .filter(tag => !this.parent.listContainsDocument(tag, tagList))
+                .filter(tag => !this.listContainsDocument(tag, tagList))
             : [];
 
         return retValue;
     }
 
-    public onChange(this:IAuReactWrapper & IBasePickerProps<ITag>, args:any[])
+    public onChange( items:any[])
     {
-        this.selectedItems = args[0];
-        console.log(this.parent.selectedItems);
+        this.selectedItems = items;
+        console.log(this.selectedItems);
     }
 
     private listContainsDocument(tag: ITag, tagList?: ITag[]) 
@@ -62,10 +59,8 @@ export class pickers
 
 
 
-    private onItemSelected(args:any[]): ITag | null
+    private onItemSelected(item: ITag): ITag | null
     {
-        console.log(this);
-        let item: ITag = args[0];
 
         if(item.key == "blue")
         {

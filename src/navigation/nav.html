@@ -22,9 +22,7 @@
   expanded-state-text=&#x27;expanded&#x27; collapsed-state-text=&#x27;collapsed&#x27; selected-key=&#x27;key3&#x27;&#x3E;&#x3C;/du-nav&#x3E;
                   </hljs>
                   <hljs language="javascript" linenumbers="true">
-    onLinkClick = (args:[any,INavLink]) => {
-      //@ts-ignore
-      var [reactEvent,item ] = args;
+    onLinkClick = (reactEvent:any,item:INavLink) => {
       console.log('Clicked on ' + item.name + ' with key ' + item.key);
     };
 

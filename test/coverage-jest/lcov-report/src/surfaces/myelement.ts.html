@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/surfaces/myelement.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/surfaces</a> myelement.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { customElement, inject, noView, inlineView} from 'aurelia-framework';</span>
+import { IDialogProps } from 'office-ui-fabric-react/lib/Dialog';
+<span class="cstat-no" title="statement not covered" >import { bindable, bindingMode } from 'aurelia-framework';</span>
+&nbsp;
+//@noView()
+//@inlineView('&lt;template&gt;&lt;div if.bind="ho"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;&lt;/template&gt;')
+@inject(Element)
+@customElement('myelement')
+<span class="cstat-no" title="statement not covered" >export class <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >myelement</span></span></span>
+{
+    public element: HTMLElement;
+    public container: HTMLElement;
+    parent:any;
+    innerid:string;
+<span class="cstat-no" title="statement not covered" >    ho:boolean = true;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>element) 
+  {
+<span class="cstat-no" title="statement not covered" >    console.log("myelement constructor");</span>
+<span class="cstat-no" title="statement not covered" >    this.element = element;</span>
+    //this.innerid = Date.now().toString();
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.container = this.element.querySelector('.au-react-root');</span>
+  
+<span class="cstat-no" title="statement not covered" >    if(this.container != null)</span>
+    {
+<span class="cstat-no" title="statement not covered" >      this.container.remove();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.container = document.createElement('span');</span>
+<span class="cstat-no" title="statement not covered" >    this.container.setAttribute('class', 'au-react-root');</span>
+<span class="cstat-no" title="statement not covered" >    this.element.appendChild(this.container);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.innerid = Date.now().toString();</span>
+&nbsp;
+    
+    
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  detached</span>()
+  {
+<span class="cstat-no" title="statement not covered" >      console.log("myelement detached");</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  attached</span>()
+  {
+<span class="cstat-no" title="statement not covered" >    console.log('myelement attached ' + this.innerid);</span>
+    let auelement = <span class="cstat-no" title="statement not covered" >this.element.getElementsByTagName("au-content")[0];</span>
+    var newParent = <span class="cstat-no" title="statement not covered" >document.getElementById(this.innerid.toString());</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if(newParent == null)</span>
+    {
+<span class="cstat-no" title="statement not covered" >        return;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    while (auelement.childNodes.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        newParent.appendChild(auelement.childNodes[0]);</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  myhandler</span>(newValue:any,previousValue:any)
+  {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    console.log("myhandler");</span>
+<span class="cstat-no" title="statement not covered" >    console.log(newValue);</span>
+<span class="cstat-no" title="statement not covered" >    console.log(previousValue);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  setHidden</span>(newValue:any,previousValue:any)
+  {
+<span class="cstat-no" title="statement not covered" >    console.log("setHidden");</span>
+<span class="cstat-no" title="statement not covered" >    console.log(newValue);</span>
+<span class="cstat-no" title="statement not covered" >    console.log(previousValue);</span>
+&nbsp;
+    // let auelement = this.element.getElementsByTagName("au-content")[0];
+&nbsp;
+    // if(newValue)
+    // {
+      
+    //   var oldParent = document.getElementById(this.innerid.toString());
+        
+    //   if(oldParent == null)
+    //   {
+    //     return;
+    //   }
+&nbsp;
+    //   while (oldParent.childNodes.length &gt; 0) {
+    //     auelement.appendChild(oldParent.childNodes[0]);
+    //   }
+    // }
+    // this.hidden = newValue;
+  }
+&nbsp;
+  @bindable(
+    { defaultBindingMode: bindingMode.twoWay  ,name:"props" 
+        ,attribute: "props" ,changeHandler: 'myhandler',
+    }) 
+<span class="cstat-no" title="statement not covered" >  public <span class="cstat-no" title="statement not covered" >props:string = "";</span></span>
+&nbsp;
+  @bindable(
+    { defaultBindingMode: bindingMode.twoWay  ,name:"hidden" 
+        ,attribute: "hidden" ,changeHandler: 'setHidden',
+    })
+<span class="cstat-no" title="statement not covered" >  public <span class="cstat-no" title="statement not covered" >hidden:boolean = true;</span></span>
+&nbsp;
+  public <span class="fstat-no" title="function not covered" >bind</span>(bindingContext)
+  {
+<span class="cstat-no" title="statement not covered" >    console.log('myelement bind');</span>
+<span class="cstat-no" title="statement not covered" >    if ( bindingContext !== null)</span>
+    {
+<span class="cstat-no" title="statement not covered" >        this.parent = bindingContext;</span>
+    }
+  }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Sep 06 2019 15:13:15 GMT+0200 (Västeuropa, sommartid)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

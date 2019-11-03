@@ -1,12 +1,11 @@
-import { IColorPickerProps } from 'office-ui-fabric-react/lib/ColorPicker';
+import { IColor } from 'office-ui-fabric-react/lib/utilities/color/interfaces';
 
 export class colorpicker
 {
     public thecolor:string = "#ffffff";
 
-    colorChanged(this:IColorPickerProps, args:any[])
+    colorChanged( ev:any, colorObj: IColor)
     {
-        let newValue:string = args[1].str;
-        this.color= newValue;
+        this.thecolor= colorObj.str;
     }
 }

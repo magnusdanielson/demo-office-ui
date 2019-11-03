@@ -1,18 +1,15 @@
-import {DuSearchBox} from '@dunite/au-office-ui'
-import { ISearchBoxProps } from 'office-ui-fabric-react/lib/SearchBox';
 export class search
 {
     searchText:string = "example";
 
-    onSearch(args:any[])
+    onSearch= (searchCommandValue: any) =>
     {
-        let newValue = args[0];
-        console.log(  'onSearch new value = ' +  newValue);
+        console.log(  'searchCommandValue = ' +  searchCommandValue);
     }
 
-    onSearch2(this:DuSearchBox & ISearchBoxProps, args:any[])
+    onChange2= (newValue?: string) =>
     {
-        this.value = args[0];
+        this.searchText = newValue;
     }
 
     onBlur()
@@ -20,9 +17,8 @@ export class search
         console.log("onBlur");
     }
 
-    onChange(this:DuSearchBox & ISearchBoxProps, args:any[])
+    onChange ( newValue?: string)
     {
-        let newValue = args[0];
         console.log( 'onChange new value = ' + newValue);
     }
 

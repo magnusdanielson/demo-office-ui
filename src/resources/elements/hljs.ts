@@ -10,6 +10,7 @@ export class Hljs {
     @bindable include: string;
     @bindable linenumbers: boolean;
 
+    private mycode:string;
     private effectiveLanguage: string;
     private static idCounter: number = 0;
     id: string = "hljsCodeTag" + Hljs.idCounter++;
@@ -29,6 +30,10 @@ export class Hljs {
         if (!this.hasInclude()) {
             this.effectiveLanguage = this.language;
             this.highlightToDom();
+        }
+        else
+        {
+         //this.includeChanged();   
         }
     }
 
