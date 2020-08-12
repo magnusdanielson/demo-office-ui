@@ -5,7 +5,6 @@ import { mybasenochild } from './mybasenochild';
 
 let reactprops: ITextFieldProps & ITextField = {} as ITextFieldProps & ITextField;
 reactprops.ariaLabel = <any>{};
-reactprops.onBeforeChange = onlyAureliaBound;
 reactprops.validateOnFocusIn = <any>{};
 reactprops.validateOnFocusOut = <any>{};
 reactprops.validateOnLoad = <any>{};
