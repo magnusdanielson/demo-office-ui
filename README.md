@@ -5,6 +5,8 @@ An Aurelia plugin that wraps React components from Microsoft Office UI.
 Install with
 `au install @dunite/au-office-ui`
 
+Please check out [au-fluent-ui](https://github.com/magnusdanielson/au-fluent-ui) instead.
+
 It is necessery to calling the .plugin method. All components must also be manually loaded with a call to .globalResources() or by adding a `<require from="@dunite/au-office-ui/elements/Surfaces/DuPanel"></require>` tag to your html view.
 
 ```
@@ -38,4 +40,4 @@ Then just use it as below
 ```
 
 ## Demo site
-[Examples of most controls in action.](https://magnusdanielson.github.io/au-office-ui/)
+[Examples of most controls in action.](https://magnusdanielson.github.io/au-fluent-ui/)
