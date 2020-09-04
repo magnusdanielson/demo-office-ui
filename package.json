@@ -59,7 +59,7 @@
     "karma-webpack": "^3.0.5",
     "mini-css-extract-plugin": "^0.4.3",
     "minimatch": "^3.0.4",
-    "node-sass": "4.9.3",
+    "node-sass": "4.13.1",
     "nps": "^5.9.3",
     "nps-utils": "^1.7.0",
     "opn": "^5.4.0",
